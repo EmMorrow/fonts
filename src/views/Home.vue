@@ -7,7 +7,7 @@
     <div class="row" style="margin-left:60px; margin-right:60px">
       <div v-for="(font,index) in titleFonts":key="index" class="col-lg-6 col-md-6 col-sm-12">
 
-        <div v-if="currFont.fontFamily = font.family" class="my-container">
+        <div class="my-container">
 
           <div class="row">
             <div class="controls col-md-3" style="padding-top:10px; padding-bottom:20px; padding-left:10px; padding-right: 10px">
@@ -51,7 +51,6 @@ export default {
     return {
       items: [
         {num: 1},
-
       ],
       titleFonts: [
         {id:1,family: "'Roboto', sans-serif"},
@@ -77,10 +76,10 @@ export default {
     }
   },
   methods: {
-//    save: function(event) {
-//      Saved.items.push({ id: this.id, family: currFont.fontFamily })
-//      id += 1
-//    }
+   save: function(event) {
+     // Saved.items.push({ id: this.id, family: currFont.fontFamily })
+     id += 1
+   }
   }
 }
 </script>
