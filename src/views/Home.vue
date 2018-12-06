@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-lg-4 col-md-4 col-sm-12"></div>
       <div class="col-lg-4 col-md-4 col-sm-12">
-        <button type="button" class="btn btn-light">Refresh</button>
+        <button v-on:click="getFonts" type="button" class="btn btn-light">Refresh</button>
       </div>
       <div class="col-lg-4"></div>
     </div>
@@ -76,11 +76,14 @@
 
 <script>
 // import Saved from './Saved'
+import axios from 'axios';
+
 
 export default {
   name: 'Home',
   data: function() {
     return {
+      fonts:[],
       titleFont1: {
         fontFamily: "'Noto Sans SC', sans-serif"
       },
@@ -97,15 +100,47 @@ export default {
   },
   created: function() {
     // gets called when the page is created
+    /* eslint-disable */
+    console.log("getting fonts")
+    axios.get('http://localhost:3000/fonts')
+    .then(response => {
+      console.log(response.data[0])
+      this.fonts = response.data
+      console.log(this.fonts[0].family)
+      // console.log(this.fonts)
+    })
   },
   computed: {
     //getters
-    font1: function() {
-      // return this.$store.getters.font
-    }
+    // getFonts: function() {
+    //   var i = Math.floor(Math.random() * Math.floor(this.fonts.length))
+    //   this.titleFont1 = this.fonts[i]
+    //   i = Math.floor(Math.random() * Math.floor(this.fonts.length))
+    //   this.titleFont2 = this.fonts[i]
+    //   i = Math.floor(Math.random() * Math.floor(this.fonts.length))
+    //   this.bodyFont1 = this.fonts[i]
+    //   i = Math.floor(Math.random() * Math.floor(this.fonts.length))
+    //   this.bodyFont2 = this.fonts[i]
+    //   return i
+    //   // return this.$store.getters.font
+    // }
   },
   methods: {
+    getFonts: function() {
+      var i = Math.floor(Math.random() * Math.floor(this.fonts.length))
 
+      this.titleFont1.fontFamily = this.fonts[i].family
+      console.log("hi")
+      console.log(this.titleFont1)
+      i = Math.floor(Math.random() * Math.floor(this.fonts.length))
+      this.titleFont2.fontFamily = this.fonts[i].family
+      i = Math.floor(Math.random() * Math.floor(this.fonts.length))
+      this.bodyFont1.fontFamily = this.fonts[i].family
+      i = Math.floor(Math.random() * Math.floor(this.fonts.length))
+      this.bodyFont2.fontFamily = this.fonts[i].family
+      return i
+      // return this.$store.getters.font
+    }
   }
 }
 </script>
