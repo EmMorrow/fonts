@@ -94,10 +94,10 @@ export default {
     }
   },
   methods: {
-    save: function(event) {
-      Saved.items.push({ id: this.id, family: currFont.fontFamily })
-      id += 1
-    }
+//    save: function(event) {
+//      Saved.items.push({ id: this.id, family: currFont.fontFamily })
+//      id += 1
+//    }
   }
 }
 </script>
