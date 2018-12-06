@@ -4,7 +4,7 @@
     <div class="row">
       
     </div>
-    <div class="row" style="margin-left:60px; margin-right:60px">
+    <div class="row">
       
       <div class="col-lg-6 col-md-6 col-sm-12">
         <div class="my-container">
@@ -216,7 +216,6 @@ font-weight: 300;
   background-color: #222;
   color: #ccc;
   margin: 20px;
-  margin-top: 0px;
 }
 
 .controls{

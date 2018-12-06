@@ -2,7 +2,7 @@
   <div id="app" class="row" style="margin: 60px;">
     <div id="nav">
 			<div class="col-lg-6 col-md-6 col-sm-6 title"><h1>FontFinder</h1></div>
-			<div class="col-lg-6 col-md-6 col-sm-6">
+			<div class="col-lg-6 col-md-6 col-sm-6" style="text-align:right">
         <router-link to="/" class="nav-link">Browse</router-link> |
         <router-link to="/about" class="nav-link">About</router-link>
 			</div>
