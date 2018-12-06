@@ -51,28 +51,7 @@ export default {
     return {
       items: [
         {num: 1},
-        // {num: 2},
-        // {num: 3},
-        // {num: 1},
-        // {num: 2},
-        // {num: 3},
-        /* {num: 1},
-        
-        titleFont1
-        {
-          return app.get(font)
-        }
 
-        */
-        // {num: 1},
-        // {num: 2},
-        // {num: 3},
-        // {num: 1},
-        // {num: 2},
-        // {num: 3},
-        // {num: 1},
-        // {num: 2},
-        // {num: 3},
       ],
       titleFonts: [
         {id:1,family: "'Roboto', sans-serif"},
@@ -81,16 +60,20 @@ export default {
       bodyFonts: [
         {id:3,family: "'Noto Sans SC', sans-serif"},
         {id:4,family: "'Open Sans', sans-serif"},
-        // {id:5,family: "'Lato', sans-serif"},
-        // {id:6,family: "'Black Han Sans', sans-serif"},
-        // {id:7,family: "'Roboto Condensed', sans-serif"},
-        // {id:8,family: "'Source Sans Pro', sans-serif"},
-        // {id:9,family: "'Oswald', sans-serif"},
       ],
       currFont: {
         fontFamily: "hii"
       },
       id: 1
+    }
+  },
+  created: function() {
+    // gets called when the page is created
+  },
+  computed: {
+    //getters
+    font1: function() {
+      // return this.$store.getters.font
     }
   },
   methods: {
