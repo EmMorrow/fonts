@@ -2,15 +2,19 @@
 <template>
   <div>
     <div class="row">
-      
+      <div class="col-lg-4 col-md-4 col-sm-12"></div>
+      <div class="col-lg-4 col-md-4 col-sm-12">
+        <button type="button" class="btn btn-light">Refresh</button>
+      </div>
+      <div class="col-lg-4"></div>
     </div>
-    <div class="row">
-      
+
+    <div class="row"> 
       <div class="col-lg-6 col-md-6 col-sm-12">
         <div class="my-container">
           <div class="row">
             <div class="controls col-md-3" style="padding-top:10px; padding-bottom:20px; padding-left:10px; padding-right: 10px">
-              <i v-on:click="save" class="far fa-heart" style="margin-right: 10px"></i>Save
+              <i class="far fa-heart" style="margin-right: 10px"></i>Save
             </div>
           </div>
 
@@ -39,7 +43,7 @@
         <div class="my-container">
           <div class="row">
             <div class="controls col-md-3" style="padding-top:10px; padding-bottom:20px; padding-left:10px; padding-right: 10px">
-              <i v-on:click="save" class="far fa-heart" style="margin-right: 10px"></i>Save
+              <i class="far fa-heart" style="margin-right: 10px"></i>Save
             </div>
           </div>
 

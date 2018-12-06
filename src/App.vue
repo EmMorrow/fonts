@@ -23,6 +23,10 @@
   margin-top: 60px;
 }
 
+#nav {
+  margin-bottom: 40px;
+}
+
 .title {
 	text-align: left;
 	font-family: 'Raleway';
