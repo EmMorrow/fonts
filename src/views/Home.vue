@@ -1,12 +1,18 @@
 
 <template>
   <div>
-    <div class="row">
-      <div class="col-lg-4 col-md-4 col-sm-12"></div>
-      <div class="col-lg-4 col-md-4 col-sm-12">
-        <button v-on:click="getFonts" type="button" class="btn btn-light">Refresh</button>
+    <div class="row" style="margin-top: 20px; margin-bottom: 20px;">
+      <div class="col-lg-5 col-md-5 col-sm-12"></div>
+      <div class="col-lg-2 col-md-2 col-sm-12">
+        <button 
+          v-on:click="getFonts" type="button" 
+          class="btn btn-warning btn-lg btn-block"
+          style="color: #fff"
+        >
+          Refresh
+        </button>
       </div>
-      <div class="col-lg-4"></div>
+      <div class="col-lg-5 col-md-5 col-sm-12"></div>
     </div>
 
     <div class="row">
@@ -14,41 +20,36 @@
         <div class="my-container">
           <div class="row">
             <div
-              class="controls col-md-3"
-              style="padding-top:10px; padding-bottom:20px; padding-left:10px; padding-right: 10px"
+              class="controls col-lg-2 col-md-2"
+              style="padding-top:20px; padding-bottom:20px; padding-left:10px; padding-right: 10px"
             >
-              <!-- <div class="row">
-                <i class="far fa-heart" style="margin-right: 10px; margin-bottom: 10px;"></i>Save
-              </div>-->
-              <div class="row">
-                <i class="fas fa-download" style="margin-right: 10px" v-on:click="dl1"></i>
-              </div>
+              <i class="fas fa-download fa-2x" style="margin-right: 10px;" v-b-modal.myModal></i>
             </div>
           </div>
 
           <div class="row">
-            <div class="controls col-lg-3 col-md-2" id="title-controls">
+            <div class="controls col-lg-2 col-md-2" id="title-controls">
               <span v-on:click="toggleLock1" id="clickable">
-                <i v-if="f1Lock" class="fas fa-lock"></i>
-                <i v-else class="fas fa-lock-open"></i>
+                <i v-if="f1Lock" class="fas fa-lock fa-2x"></i>
+                <i v-else class="fas fa-lock-open fa-2x"></i>
               </span>
             </div>
 
-            <div class="col-lg-9 col-md-9 col-sm-7 col-xs-9">
+            <div class="col-lg-10 col-md-10 col-sm-7 col-xs-9 text-container">
               <h1 v-bind:style="titleFont1" class="titleFont">{{titleFont1.fontName}}</h1>
             </div>
           </div>
 
           <div class="row">
-            <div class="controls col-lg-3 col-md-2" style="height:500px">
+            <div class="controls col-lg-2 col-md-2" style="height:500px">
               <span v-on:click="toggleLock2" id="clickable">
-                <i v-if="f2Lock" class="fas fa-lock"></i>
-                <i v-else class="fas fa-lock-open"></i>
+                <i v-if="f2Lock" class="fas fa-lock fa-2x"></i>
+                <i v-else class="fas fa-lock-open fa-2x"></i>
               </span>
               <!-- <a href="google.com" target="_blank">hi</a> -->
             </div>
 
-            <div class="col-lg-9 col-md-9 col-sm-7 col-xs-9">
+            <div class="col-lg-10 col-md-10 col-sm-7 col-xs-9 text-container">
               <p class="desc" v-bind:style="bodyFont1">
                 <span style="font-weight:800">{{bodyFont1.fontName}}</span> - The Nike Epic React Flyknit foam cushioning is responsive yet light-weight, durable yet soft. This creates a sensation that not only enhances the feeling of moving forward, but makes running feel fun, too.
               </p>
@@ -61,43 +62,36 @@
         <div class="my-container">
           <div class="row">
             <div
-              class="controls col-lg-3 col-md-2"
-              style="padding-top:10px; padding-bottom:20px; padding-left:10px; padding-right: 10px"
+              class="controls col-lg-2 col-md-2"
+              style="padding-top:20px; padding-bottom:20px; padding-left:10px; padding-right: 10px"
             >
-              <!-- <div class="row">
-                <i class="far fa-heart" style="margin-right: 10px; margin-bottom: 20px;"></i>Save
-              </div>-->
-              <!-- <div class="row"> -->
-                  <i class="fas fa-download" style="margin-right: 10px;" v-on:click="dl2"></i>
-              <!-- </div> -->
+              <i class="fas fa-download fa-2x" style="margin-right: 10px;" v-b-modal.myModal></i>
             </div>
-
-            download
           </div>
 
           <div class="row">
-            <div class="controls col-lg-3 col-md-2" id="title-controls">
+            <div class="controls col-lg-2 col-md-2" id="title-controls">
               <span v-on:click="toggleLock3" id="clickable">
-                <i v-if="f3Lock" class="fas fa-lock"></i>
-                <i v-else class="fas fa-lock-open"></i>
+                <i v-if="f3Lock" class="fas fa-lock fa-2x"></i>
+                <i v-else class="fas fa-lock-open fa-2x"></i>
               </span>
             </div>
 
-            <div class="col-lg-9 col-md-9 col-sm-7 col-xs-9">
+            <div class="col-lg-10 col-md-10 col-sm-7 col-xs-9 text-container">
               <h1 v-bind:style="titleFont2" class="titleFont">{{titleFont2.fontName}}</h1>
             </div>
           </div>
 
           <div class="row">
-            <div class="controls col-lg-3 col-md-2" style="height:500px">
+            <div class="controls col-lg-2 col-md-2" style="height:500px">
               <!-- <a href="google.com" target="_blank">hi</a> -->
               <span v-on:click="toggleLock4" id="clickable">
-                <i v-if="f4Lock" class="fas fa-lock"></i>
-                <i v-else class="fas fa-lock-open"></i>
+                <i v-if="f4Lock" class="fas fa-lock fa-2x"></i>
+                <i v-else class="fas fa-lock-open fa-2x"></i>
               </span>
             </div>
 
-            <div class="col-lg-9 col-md-9 col-sm-7 col-xs-9">
+            <div class="col-lg-10 col-md-10 col-sm-7 col-xs-9 text-container">
               <p v-bind:style="bodyFont2" class="desc">
                 <span style="font-weight:800">{{bodyFont2.fontName }}</span> - The Nike Epic React Flyknit foam cushioning is responsive yet light-weight, durable yet soft. This creates a sensation that not only enhances the feeling of moving forward, but makes running feel fun, too.
               </p>
@@ -105,54 +99,9 @@
           </div>
         </div>
       </div>
-
-      <div v-if="download1" div class="modal-mask">
-        <div class="modal-wrapper">
-          <div class="modal-container">
-            <div class="modal-header">
-              <slot name="dlTitle">
-                <a>Download title font</a>
-              </slot>
-            </div>
-
-            <div class="modal-body">
-              <slot name="dlBody">
-                <a>Download body font</a>
-              </slot>
-            </div>
-
-            <div class="modal-footer">
-              <slot name="footer">
-                <button class="modal-default-button" v-on:click="close1">OK</button>
-              </slot>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div v-if="download2" div class="modal-mask">
-        <div class="modal-wrapper">
-          <div class="modal-container">
-            <div class="modal-header">
-              <slot name="dlTitle">
-                <a>Download title font</a>
-              </slot>
-            </div>
-
-            <div class="modal-body">
-              <slot name="dlBody">
-                <a>Download body font</a>
-              </slot>
-            </div>
-
-            <div class="modal-footer">
-              <slot name="footer">
-                <button class="modal-default-button" v-on:click="close2">OK</button>
-              </slot>
-            </div>
-          </div>
-        </div>
-      </div>
+    </div>
+    <div>
+      <b-modal id="myModal">Hello From My Modal!</b-modal>
     </div>
   </div>
 </template>
@@ -161,10 +110,8 @@
 
 <script>
 // import Saved from './Saved'
-import axios from 'axios';
+import axios from "axios";
 const fetch = require("node-fetch");
-
-
 
 export default {
   name: "Home",
@@ -190,15 +137,13 @@ export default {
       bodyFont2: {
         fontFamily: "'Lato', sans-serif",
         fontName: "Lato"
-      },
-      download1: 1,
-      download2: 0
+      }
     };
   },
   created: function() {
     // gets called when the page is created
     /* eslint-disable */
-    console.log("getting fonts")
+    console.log("getting fonts");
 
     // axios.get('http://localhost:3000/fonts')
     // .then(response => {
@@ -207,20 +152,27 @@ export default {
     //   console.log(this.fonts[0].family)
     //   // console.log(this.fonts)
     // })
-    let newFonts = []
+    let newFonts = [];
     if (this.fonts.length == 0) {
-      fetch('https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyBJlUfLH58MJnqXQlyrnCCoIeihDcqVsfs&sort=popularity')
-        .then((resp) => resp.json())
-        .then(function(data){
+      fetch(
+        "https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyBJlUfLH58MJnqXQlyrnCCoIeihDcqVsfs&sort=popularity"
+      )
+        .then(resp => resp.json())
+        .then(function(data) {
           var i;
           for (i = 0; i < data.items.length; i++) {
-            let combo = "\'" + data.items[i].family + "\'" + ", " + data.items[i].category
-            let newFont = {family: data.items[i].family, category: data.items[i].category, pairing: combo};
+            let combo =
+              "'" + data.items[i].family + "'" + ", " + data.items[i].category;
+            let newFont = {
+              family: data.items[i].family,
+              category: data.items[i].category,
+              pairing: combo
+            };
             newFonts.push(newFont);
           }
         });
-        this.fonts = newFonts
-      }
+      this.fonts = newFonts;
+    }
   },
   computed: {
     //getters
@@ -278,18 +230,6 @@ export default {
     },
     toggleLock4: function() {
       this.f4Lock ^= true;
-    },
-    dl1: function() {
-      this.download1 = 1;
-    },
-    dl2: function() {
-      this.download2 = 1;
-    },
-    close1: function() {
-      this.download1 = 0;
-    },
-    close2: function() {
-      this.download2 = 0;
     }
   }
 };
@@ -411,7 +351,11 @@ textarea {
 .my-container {
   background-color: #222;
   color: #ccc;
-  margin: 20px;
+  padding-right: 20px;
+  margin: 10px;
+}
+
+.text-container {
 }
 
 .controls {
@@ -481,9 +425,9 @@ textarea {
 #toolbar .slider-handle {
   background: #ccc;
 }
-#title-controls{
-box-sizing: border-box;
-padding-bottom: 5%;
+#title-controls {
+  box-sizing: border-box;
+  padding-bottom: 5%;
 }
 
 .slider.slider-horizontal .slider-selection,

@@ -1,10 +1,9 @@
 <template>
-  <div id="app" class="row" style="margin: 60px;">
-    <div id="nav">
-			<div class="col-lg-6 col-md-6 col-sm-6 title"><h1>FontFinder</h1></div>
+  <div id="app" style="margin: 60px;">
+    <div id="nav" class="row">
+			<div class="col-lg-6 col-md-6 col-sm-6 title">FontFinder</div>
 			<div class="col-lg-6 col-md-6 col-sm-6" style="text-align:right">
-        <router-link to="/" class="nav-link">Browse</router-link> |
-        <router-link to="/about" class="nav-link">About</router-link>
+        <!-- <router-link to="/" class="nav-link">Browse</router-link> | <router-link to="/about" class="nav-link">About</router-link> -->
 			</div>
     </div>
     <router-view/>
@@ -25,7 +24,7 @@
 }
 
 #nav {
-  margin-bottom: 40px;
+  /* margin-bottom: 0px; */
 }
 
 .title {
