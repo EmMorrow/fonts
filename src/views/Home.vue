@@ -14,7 +14,12 @@
         <div class="my-container">
           <div class="row">
             <div class="controls col-md-3" style="padding-top:10px; padding-bottom:20px; padding-left:10px; padding-right: 10px">
-              <i class="far fa-heart" style="margin-right: 10px"></i>Save
+              <div class="row">
+                <i class="far fa-heart" style="margin-right: 10px"></i>Save
+              </div>
+              <div class="row">
+                <i class="far fa-download" style="margin-right: 10px"></i>
+              </div>
             </div>
           </div>
 
@@ -43,7 +48,12 @@
         <div class="my-container">
           <div class="row">
             <div class="controls col-md-3" style="padding-top:10px; padding-bottom:20px; padding-left:10px; padding-right: 10px">
-              <i class="far fa-heart" style="margin-right: 10px"></i>Save
+              <div class="row">
+                <i class="far fa-heart" style="margin-right: 10px"></i>Save
+              </div>
+              <div class="row">
+                <i class="far fa-download" style="margin-right: 10px"></i>
+              </div>
             </div>
           </div>
 

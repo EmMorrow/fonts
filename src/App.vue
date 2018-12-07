@@ -30,7 +30,7 @@
 .title {
 	text-align: left;
 	font-family: 'Raleway';
-	font-weight: 700;
+	font-weight: 900;
 	font-size: 40px;
 	color: #464646;
 }
