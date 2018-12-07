@@ -13,6 +13,7 @@
 
 <style>
 @import url('https://fonts.googleapis.com/css?family=Raleway:900');
+@import url('https://fonts.googleapis.com/css?family=Assistant:800');
 
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -29,7 +30,7 @@
 
 .title {
 	text-align: left;
-	font-family: 'Raleway';
+	font-family: 'Assistant', sans-serif;
 	font-weight: 900;
 	font-size: 40px;
 	color: #464646;
