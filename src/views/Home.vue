@@ -20,6 +20,10 @@
 
           <div class="row">
             <div class="controls col-lg-3 col-md-2" id="title-controls">
+              <span v-on:click="toggleLock1" id="clickable">
+              <i v-if="f1Lock" class="fas fa-lock"></i>
+              <i v-else class="fas fa-lock-open"></i>
+              </span>
             </div>
             
             <div class="col-lg-9 col-md-9 col-sm-7 col-xs-9">
@@ -54,6 +58,10 @@
 
           <div class="row">
             <div class="controls col-lg-3 col-md-2" id="title-controls">
+              <span v-on:click="toggleLock3" id="clickable">
+                <i v-if="f3Lock" class="fas fa-lock"></i>
+                <i v-else class="fas fa-lock-open"></i>
+              </span>
             </div>
             
             <div class="col-lg-9 col-md-9 col-sm-7 col-xs-9">
@@ -64,10 +72,10 @@
           <div class="row">
             <div class="controls col-lg-3 col-md-2" style="height:500px">
             <!-- <a href="google.com" target="_blank">hi</a> -->
-            <span v-on:click="toggleLock4" id="clickable">
-              <i v-if="f4Lock" class="fas fa-lock"></i>
-              <i v-else class="fas fa-lock-open"></i>
-            </span>
+              <span v-on:click="toggleLock4" id="clickable">
+                <i v-if="f4Lock" class="fas fa-lock"></i>
+                <i v-else class="fas fa-lock-open"></i>
+              </span>
             </div>
             
             <div class="col-lg-9 col-md-9 col-sm-7 col-xs-9">
@@ -80,7 +88,7 @@
     </div>  
   </div>
 </template>
-<!-- <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script> -->
+<script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
 
 
 <script>
@@ -151,7 +159,7 @@ export default {
         this.titleFont1.fontName = this.fonts[i].family
       }
 
-      if (this.f3Lock == 0) {
+      if (!this.f3Lock) {
         i = Math.floor(Math.random() * Math.floor(45))
         this.titleFont2.fontFamily = this.fonts[i].pairing
         this.titleFont2.fontName = this.fonts[i].family
@@ -172,8 +180,14 @@ export default {
       return 
       // return this.$store.getters.font
     },
+    toggleLock1: function() {
+      this.f1Lock ^= true
+    },
     toggleLock2: function() {
       this.f2Lock ^= true
+    },
+    toggleLock3: function() {
+      this.f3Lock ^= true
     },
     toggleLock4: function() {
       this.f4Lock ^= true
@@ -372,7 +386,7 @@ display: none;
 
 #title-controls{
 box-sizing: border-box;
-padding-top: 12%;
+padding-bottom: 12%;
 }
 
 .btn.lock{
