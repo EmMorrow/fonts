@@ -29,7 +29,12 @@
 
           <div class="row">
             <div class="controls col-lg-3 col-md-2" style="height:500px">
-            <a href="google.com" target="_blank">hi</a>
+            
+            <span v-on:click="toggleLock2" id="clickable">
+              <i v-if="f2Lock" class="fas fa-lock"></i>
+              <i v-else class="fas fa-lock-open"></i>
+            </span>
+            <!-- <a href="google.com" target="_blank">hi</a> -->
             </div>
             
             <div class="col-lg-9 col-md-9 col-sm-7 col-xs-9">
@@ -58,7 +63,11 @@
 
           <div class="row">
             <div class="controls col-lg-3 col-md-2" style="height:500px">
-            <a href="google.com" target="_blank">hi</a>
+            <!-- <a href="google.com" target="_blank">hi</a> -->
+            <span v-on:click="toggleLock4" id="clickable">
+              <i v-if="f4Lock" class="fas fa-lock"></i>
+              <i v-else class="fas fa-lock-open"></i>
+            </span>
             </div>
             
             <div class="col-lg-9 col-md-9 col-sm-7 col-xs-9">
@@ -83,6 +92,10 @@ export default {
   name: 'Home',
   data: function() {
     return {
+      f1Lock: 0,
+      f2Lock: 0,
+      f3Lock: 0,
+      f4Lock: 0,
       fonts:[],
       titleFont1: {
         fontFamily: "'Noto Sans SC', sans-serif",
@@ -131,23 +144,39 @@ export default {
   },
   methods: {
     getFonts: function() {
-      var i = Math.floor(Math.random() * Math.floor(45))
+      console.log(this.f2Lock)
+      if (!this.f1Lock) {
+        var i = Math.floor(Math.random() * Math.floor(45))
+        this.titleFont1.fontFamily = this.fonts[i].pairing
+        this.titleFont1.fontName = this.fonts[i].family
+      }
 
-      this.titleFont1.fontFamily = this.fonts[i].pairing
-      console.log("hi")
-      console.log(this.fonts[i].pairing)
-      i = Math.floor(Math.random() * Math.floor(45))
-      console.log(i)
-      this.titleFont2.fontFamily = this.fonts[i].pairing
-      this.titleFont2.fontName = this.fonts[i].family
-      i = Math.floor(Math.random() * Math.floor(45))
-      this.bodyFont1.fontFamily = this.fonts[i].pairing
-      this.bodyFont1.fontName = this.fonts[i].family
-      i = Math.floor(Math.random() * Math.floor(45))
-      this.bodyFont2.fontFamily = this.fonts[i].pairing
-      this.bodyFont2.fontName = this.fonts[i].family
+      if (this.f3Lock == 0) {
+        i = Math.floor(Math.random() * Math.floor(45))
+        this.titleFont2.fontFamily = this.fonts[i].pairing
+        this.titleFont2.fontName = this.fonts[i].family
+      }
+
+      if (!this.f2Lock) {
+        i = Math.floor(Math.random() * Math.floor(45))
+        this.bodyFont1.fontFamily = this.fonts[i].pairing
+        this.bodyFont1.fontName = this.fonts[i].family
+      }
+      
+      if (!this.f4Lock) {
+        i = Math.floor(Math.random() * Math.floor(45))
+        this.bodyFont2.fontFamily = this.fonts[i].pairing
+        this.bodyFont2.fontName = this.fonts[i].family
+      }
+      
       return 
       // return this.$store.getters.font
+    },
+    toggleLock2: function() {
+      this.f2Lock ^= true
+    },
+    toggleLock4: function() {
+      this.f4Lock ^= true
     }
   }
 }
@@ -155,7 +184,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-@import url('https://fonts.googleapis.com/css?family=Anton|Arimo|Arvo|Bitter|Cabin|Crimson+Text|Dosis|Fira+Sans|Fjalla+One|Hind|Inconsolata|Indie+Flower|Josefin+Sans|Lato|Libre+Baskerville|Libre+Franklin|Lobster|Lora|Merriweather|Montserrat|Mukta|Muli|Nanum+Gothic|Noto+Sans|Noto+Sans+KR|Noto+Serif|Nunito|Open+Sans|Open+Sans+Condensed:300|Oswald|Oxygen|PT+Sans|PT+Sans+Narrow|PT+Serif|Playfair+Display|Poppins|Quicksand|Raleway|Roboto|Roboto+Condensed|Roboto+Mono|Roboto+Slab|Slabo+27px|Source+Sans+Pro|Titillium+Web|Ubuntu');
+@import url('https://fonts.googleapis.com/css?family=Anton|Arimo|Arvo|Bitter|Cabin|Crimson+Text|Dosis|Fira+Sans|Fjalla+One|Hind|Inconsolata|Indie+Flower|Josefin+Sans|Lato|Libre+Baskerville|Libre+Franklin|Lobster|Lora|Merriweather|Montserrat|Mukta|Muli|Nanum+Gothic|Noto+Sans|Noto+Sans+KR|Noto+Serif|Nunito|Open+Sans|Open+Sans+Condensed:300|Oswald|Oxygen|PT+Sans|PT+Sans+Narrow|PT+Serif|Playfair+Display|Poppins|Quicksand|Raleway:400,700|Roboto|Roboto+Condensed|Roboto+Mono|Roboto+Slab|Slabo+27px|Source+Sans+Pro|Titillium+Web|Ubuntu');
 h1, h2 {
   font-weight: normal;
 }
@@ -214,6 +243,10 @@ overflow: auto;
 resize: none;
 width: 100%;
 outline: none;
+}
+
+#clickable {
+  cursor: pointer;
 }
 
 #h1{
