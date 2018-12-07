@@ -4,13 +4,12 @@
     <div class="row" style="margin-top: 20px; margin-bottom: 20px;">
       <div class="col-lg-5 col-md-5 col-sm-12"></div>
       <div class="col-lg-2 col-md-2 col-sm-12">
-        <button 
-          v-on:click="getFonts" type="button" 
+        <button
+          v-on:click="getFonts"
+          type="button"
           class="btn btn-warning btn-lg btn-block"
           style="color: #fff; font-weight: bold"
-        >
-          Refresh
-        </button>
+        >Refresh</button>
       </div>
       <div class="col-lg-5 col-md-5 col-sm-12"></div>
     </div>
@@ -23,15 +22,15 @@
               class="controls col-lg-2 col-md-2"
               style="padding-top:20px; padding-bottom:20px; padding-left:10px; padding-right: 10px"
             >
-              <i class="fas fa-download fa-2x" style="margin-right: 10px;" v-b-modal.myModal></i>
+              <i class="fas fa-download fa-lg" v-b-modal.myModal1></i>
             </div>
           </div>
 
           <div class="row">
             <div class="controls col-lg-2 col-md-2" id="title-controls">
               <span v-on:click="toggleLock1" id="clickable">
-                <i v-if="f1Lock" class="fas fa-lock fa-2x"></i>
-                <i v-else class="fas fa-lock-open fa-2x"></i>
+                <i v-if="f1Lock" class="fas fa-lock fa-lg"></i>
+                <i v-else class="fas fa-lock-open fa-lg"></i>
               </span>
             </div>
 
@@ -43,8 +42,8 @@
           <div class="row">
             <div class="controls col-lg-2 col-md-2" style="height:500px">
               <span v-on:click="toggleLock2" id="clickable">
-                <i v-if="f2Lock" class="fas fa-lock fa-2x"></i>
-                <i v-else class="fas fa-lock-open fa-2x"></i>
+                <i v-if="f2Lock" class="fas fa-lock fa-lg"></i>
+                <i v-else class="fas fa-lock-open fa-lg"></i>
               </span>
               <!-- <a href="google.com" target="_blank">hi</a> -->
             </div>
@@ -65,15 +64,15 @@
               class="controls col-lg-2 col-md-2"
               style="padding-top:20px; padding-bottom:20px; padding-left:10px; padding-right: 10px"
             >
-              <i class="fas fa-download fa-2x" style="margin-right: 10px;" v-b-modal.myModal></i>
+              <i class="fas fa-download fa-lg" v-b-modal.myModal2></i>
             </div>
           </div>
 
           <div class="row">
             <div class="controls col-lg-2 col-md-2" id="title-controls">
               <span v-on:click="toggleLock3" id="clickable">
-                <i v-if="f3Lock" class="fas fa-lock fa-2x"></i>
-                <i v-else class="fas fa-lock-open fa-2x"></i>
+                <i v-if="f3Lock" class="fas fa-lock fa-lg"></i>
+                <i v-else class="fas fa-lock-open fa-lg"></i>
               </span>
             </div>
 
@@ -86,8 +85,8 @@
             <div class="controls col-lg-2 col-md-2" style="height:500px">
               <!-- <a href="google.com" target="_blank">hi</a> -->
               <span v-on:click="toggleLock4" id="clickable">
-                <i v-if="f4Lock" class="fas fa-lock fa-2x"></i>
-                <i v-else class="fas fa-lock-open fa-2x"></i>
+                <i v-if="f4Lock" class="fas fa-lock fa-lg"></i>
+                <i v-else class="fas fa-lock-open fa-lg"></i>
               </span>
             </div>
 
@@ -101,7 +100,64 @@
       </div>
     </div>
     <div>
-      <b-modal id="myModal">Hello From My Modal!</b-modal>
+      <b-modal id="myModal1" title="Download" style="text-align: left">
+        <h6>Embed</h6>
+        <p>
+          Copy and paste the following into the
+          <code>
+            <span class="tag">&lt;<span class="name">head</span>&gt;
+            </span>
+          </code>
+           of your HTML document:
+        </p>
+        <code v-bind="font1 = titleFont1.fontName, font2 = bodyFont1.fontName">
+          <span class="tag">&lt;<span class="name">link href="https://fonts.googleapis.com/css?family={{font1}}|{{font2}}" rel="stylesheet"</span>&gt;
+          </span>
+        </code>
+        <br>
+        <br>
+        <h5>Title Font</h5>
+        <a
+          v-bind:href="'https://fonts.google.com/specimen/' + titleFont1.fontName"
+          target="_blank"
+        >Go to font page</a>
+        <br>
+        <br>
+        <h5>Body Font</h5>
+        <a
+          v-bind:href="'https://fonts.google.com/specimen/' + bodyFont1.fontName"
+          target="_blank"
+        >Go to font page</a>
+      </b-modal>
+      <b-modal id="myModal2" title="Download" style="text-align: left">
+        <h6>Embed</h6>
+        <p>
+          Copy and paste the following into the
+          <code>
+            <span class="tag">&lt;<span class="name">head</span>&gt;
+            </span>
+          </code>
+          of your HTML document:
+        </p>
+        <code v-bind="font3 = titleFont2.fontName, font4 = bodyFont2.fontName">
+          <span class="tag">&lt;<span class="name">link href="https://fonts.googleapis.com/css?family={{font3}}|{{font4}}" rel="stylesheet"</span>&gt;
+          </span>
+        </code>
+        <br>
+        <br>
+        <h5>Title Font</h5>
+        <a
+          v-bind:href="'https://fonts.google.com/specimen/' + titleFont2.fontName"
+          target="_blank"
+        >Go to font page</a>
+        <br>
+        <br>
+        <h5>Body Font</h5>
+        <a
+          v-bind:href="'https://fonts.google.com/specimen/' + bodyFont2.fontName"
+          target="_blank"
+        >Go to font page</a>
+      </b-modal>
     </div>
   </div>
 </template>
