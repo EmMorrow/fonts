@@ -104,6 +104,8 @@
 <script>
 // import Saved from './Saved'
 import axios from 'axios';
+const fetch = require("node-fetch");
+
 
 
 export default {
@@ -137,13 +139,28 @@ export default {
     // gets called when the page is created
     /* eslint-disable */
     console.log("getting fonts")
-    axios.get('http://localhost:3000/fonts')
-    .then(response => {
-      console.log(response.data[0])
-      this.fonts = response.data
-      console.log(this.fonts[0].family)
-      // console.log(this.fonts)
-    })
+
+    // axios.get('http://localhost:3000/fonts')
+    // .then(response => {
+    //   console.log(response.data[0])
+    //   this.fonts = response.data
+    //   console.log(this.fonts[0].family)
+    //   // console.log(this.fonts)
+    // })
+    let newFonts = []
+    if (this.fonts.length == 0) {
+      fetch('https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyBJlUfLH58MJnqXQlyrnCCoIeihDcqVsfs&sort=popularity')
+        .then((resp) => resp.json())
+        .then(function(data){
+          var i;
+          for (i = 0; i < data.items.length; i++) {
+            let combo = "\'" + data.items[i].family + "\'" + ", " + data.items[i].category
+            let newFont = {family: data.items[i].family, category: data.items[i].category, pairing: combo};
+            newFonts.push(newFont);
+          }
+        });
+        this.fonts = newFonts
+      }
   },
   computed: {
     //getters
