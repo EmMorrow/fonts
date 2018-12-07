@@ -23,7 +23,7 @@
             </div>
             
             <div class="col-lg-9 col-md-9 col-sm-7 col-xs-9">
-              <h1 v-bind:style="titleFont1" class="titleFont">{{titleFont1.fontFamily}}</h1>
+              <h1 v-bind:style="titleFont1" class="titleFont">{{titleFont1.fontName}}</h1>
             </div>
           </div>
 
@@ -33,7 +33,7 @@
             </div>
             
             <div class="col-lg-9 col-md-9 col-sm-7 col-xs-9">
-              <p class="desc" v-bind:style="bodyFont1" ><span style="font-weight:800">{{bodyFont1.fontFamily}}</span> - The Nike Epic React Flyknit foam cushioning is responsive yet light-weight, durable yet soft. This creates a sensation that not only enhances the feeling of moving forward, but makes running feel fun, too.</p>
+              <p class="desc" v-bind:style="bodyFont1" ><span style="font-weight:800">{{bodyFont1.fontName}}</span> - The Nike Epic React Flyknit foam cushioning is responsive yet light-weight, durable yet soft. This creates a sensation that not only enhances the feeling of moving forward, but makes running feel fun, too.</p>
             </div>
           </div>
         </div>
@@ -52,7 +52,7 @@
             </div>
             
             <div class="col-lg-9 col-md-9 col-sm-7 col-xs-9">
-              <h1 v-bind:style="titleFont2" class="titleFont">{{titleFont2.fontFamily}}</h1>
+              <h1 v-bind:style="titleFont2" class="titleFont">{{titleFont2.fontName}}</h1>
             </div>
           </div>
 
@@ -62,7 +62,7 @@
             </div>
             
             <div class="col-lg-9 col-md-9 col-sm-7 col-xs-9">
-              <p v-bind:style="bodyFont2" class="desc"><span style="font-weight:800">{{bodyFont2.fontFamily}}</span> - The Nike Epic React Flyknit foam cushioning is responsive yet light-weight, durable yet soft. This creates a sensation that not only enhances the feeling of moving forward, but makes running feel fun, too.</p>
+              <p v-bind:style="bodyFont2" class="desc"><span style="font-weight:800">{{bodyFont2.fontName }}</span> - The Nike Epic React Flyknit foam cushioning is responsive yet light-weight, durable yet soft. This creates a sensation that not only enhances the feeling of moving forward, but makes running feel fun, too.</p>
             </div>
           </div>
         </div>
@@ -85,16 +85,20 @@ export default {
     return {
       fonts:[],
       titleFont1: {
-        fontFamily: "'Noto Sans SC', sans-serif"
+        fontFamily: "'Noto Sans SC', sans-serif",
+        fontName: "Noto Sans SC"
       },
       titleFont2: {
-        fontFamily: "'Roboto', sans-serif"
+        fontFamily: "'Roboto', sans-serif",
+        fontName: "Roboto"
       },
       bodyFont1: {
-        fontFamily: "'Open Sans', sans-serif"
+        fontFamily: "'Open Sans', sans-serif",
+        fontName: "Open Sans"
       },
       bodyFont2: {
-        fontFamily: "'Lato', sans-serif"
+        fontFamily: "'Lato', sans-serif",
+        fontName: "Lato"
       },
     }
   },
@@ -127,18 +131,22 @@ export default {
   },
   methods: {
     getFonts: function() {
-      var i = Math.floor(Math.random() * Math.floor(this.fonts.length))
+      var i = Math.floor(Math.random() * Math.floor(45))
 
-      this.titleFont1.fontFamily = this.fonts[i].family
+      this.titleFont1.fontFamily = this.fonts[i].pairing
       console.log("hi")
-      console.log(this.titleFont1)
-      i = Math.floor(Math.random() * Math.floor(this.fonts.length))
-      this.titleFont2.fontFamily = this.fonts[i].family
-      i = Math.floor(Math.random() * Math.floor(this.fonts.length))
-      this.bodyFont1.fontFamily = this.fonts[i].family
-      i = Math.floor(Math.random() * Math.floor(this.fonts.length))
-      this.bodyFont2.fontFamily = this.fonts[i].family
-      return i
+      console.log(this.fonts[i].pairing)
+      i = Math.floor(Math.random() * Math.floor(45))
+      console.log(i)
+      this.titleFont2.fontFamily = this.fonts[i].pairing
+      this.titleFont2.fontName = this.fonts[i].family
+      i = Math.floor(Math.random() * Math.floor(45))
+      this.bodyFont1.fontFamily = this.fonts[i].pairing
+      this.bodyFont1.fontName = this.fonts[i].family
+      i = Math.floor(Math.random() * Math.floor(45))
+      this.bodyFont2.fontFamily = this.fonts[i].pairing
+      this.bodyFont2.fontName = this.fonts[i].family
+      return 
       // return this.$store.getters.font
     }
   }
@@ -147,7 +155,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-@import url('https://fonts.googleapis.com/css?family=Black+Han+Sans|Lato|Noto+Sans+SC|Noto+Sans+TC|Open+Sans|Oswald|Roboto|Roboto+Condensed|Source+Sans+Pro');
+@import url('https://fonts.googleapis.com/css?family=Anton|Arimo|Arvo|Bitter|Cabin|Crimson+Text|Dosis|Fira+Sans|Fjalla+One|Hind|Inconsolata|Indie+Flower|Josefin+Sans|Lato|Libre+Baskerville|Libre+Franklin|Lobster|Lora|Merriweather|Montserrat|Mukta|Muli|Nanum+Gothic|Noto+Sans|Noto+Sans+KR|Noto+Serif|Nunito|Open+Sans|Open+Sans+Condensed:300|Oswald|Oxygen|PT+Sans|PT+Sans+Narrow|PT+Serif|Playfair+Display|Poppins|Quicksand|Raleway|Roboto|Roboto+Condensed|Roboto+Mono|Roboto+Slab|Slabo+27px|Source+Sans+Pro|Titillium+Web|Ubuntu');
 h1, h2 {
   font-weight: normal;
 }

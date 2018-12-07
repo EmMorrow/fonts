@@ -39,7 +39,8 @@ app.get('/fonts', (req, res) => {
       .then(function(data){
         var i;
         for (i = 0; i < data.items.length; i++) {
-          let newFont = {family: data.items[i].family, category: data.items[i].category};
+          let combo = "\'" + data.items[i].family + "\'" + ", " + data.items[i].category
+          let newFont = {family: data.items[i].family, category: data.items[i].category, pairing: combo};
           fonts.push(newFont);
         }
       });
