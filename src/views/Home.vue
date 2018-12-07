@@ -7,7 +7,7 @@
         <button
           v-on:click="getFonts"
           type="button"
-          class="btn btn-warning btn-lg btn-block"
+          class="btn btn-warning btn-block"
           style="color: #fff; font-weight: bold"
         >Refresh</button>
       </div>
