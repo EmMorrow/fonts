@@ -9,16 +9,19 @@
       <div class="col-lg-4"></div>
     </div>
 
-    <div class="row"> 
+    <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-12">
         <div class="my-container">
           <div class="row">
-            <div class="controls col-md-3" style="padding-top:10px; padding-bottom:20px; padding-left:10px; padding-right: 10px">
+            <div
+              class="controls col-md-3"
+              style="padding-top:10px; padding-bottom:20px; padding-left:10px; padding-right: 10px"
+            >
+              <!-- <div class="row">
+                <i class="far fa-heart" style="margin-right: 10px; margin-bottom: 10px;"></i>Save
+              </div>-->
               <div class="row">
-                <i class="far fa-heart" style="margin-right: 10px"></i>Save
-              </div>
-              <div class="row">
-                <i class="far fa-download" style="margin-right: 10px"></i>
+                <i class="fas fa-download" style="margin-right: 10px" v-on:click="dl1"></i>
               </div>
             </div>
           </div>
@@ -26,11 +29,11 @@
           <div class="row">
             <div class="controls col-lg-3 col-md-2" id="title-controls">
               <span v-on:click="toggleLock1" id="clickable">
-              <i v-if="f1Lock" class="fas fa-lock"></i>
-              <i v-else class="fas fa-lock-open"></i>
+                <i v-if="f1Lock" class="fas fa-lock"></i>
+                <i v-else class="fas fa-lock-open"></i>
               </span>
             </div>
-            
+
             <div class="col-lg-9 col-md-9 col-sm-7 col-xs-9">
               <h1 v-bind:style="titleFont1" class="titleFont">{{titleFont1.fontName}}</h1>
             </div>
@@ -38,16 +41,17 @@
 
           <div class="row">
             <div class="controls col-lg-3 col-md-2" style="height:500px">
-            
-            <span v-on:click="toggleLock2" id="clickable">
-              <i v-if="f2Lock" class="fas fa-lock"></i>
-              <i v-else class="fas fa-lock-open"></i>
-            </span>
-            <!-- <a href="google.com" target="_blank">hi</a> -->
+              <span v-on:click="toggleLock2" id="clickable">
+                <i v-if="f2Lock" class="fas fa-lock"></i>
+                <i v-else class="fas fa-lock-open"></i>
+              </span>
+              <!-- <a href="google.com" target="_blank">hi</a> -->
             </div>
-            
+
             <div class="col-lg-9 col-md-9 col-sm-7 col-xs-9">
-              <p class="desc" v-bind:style="bodyFont1" ><span style="font-weight:800">{{bodyFont1.fontName}}</span> - The Nike Epic React Flyknit foam cushioning is responsive yet light-weight, durable yet soft. This creates a sensation that not only enhances the feeling of moving forward, but makes running feel fun, too.</p>
+              <p class="desc" v-bind:style="bodyFont1">
+                <span style="font-weight:800">{{bodyFont1.fontName}}</span> - The Nike Epic React Flyknit foam cushioning is responsive yet light-weight, durable yet soft. This creates a sensation that not only enhances the feeling of moving forward, but makes running feel fun, too.
+              </p>
             </div>
           </div>
         </div>
@@ -56,14 +60,19 @@
       <div class="col-lg-6 col-md-6 col-sm-12">
         <div class="my-container">
           <div class="row">
-            <div class="controls col-md-3" style="padding-top:10px; padding-bottom:20px; padding-left:10px; padding-right: 10px">
-              <div class="row">
-                <i class="far fa-heart" style="margin-right: 10px"></i>Save
-              </div>
-              <div class="row">
-                <i class="far fa-download" style="margin-right: 10px"></i>
-              </div>
+            <div
+              class="controls col-lg-3 col-md-2"
+              style="padding-top:10px; padding-bottom:20px; padding-left:10px; padding-right: 10px"
+            >
+              <!-- <div class="row">
+                <i class="far fa-heart" style="margin-right: 10px; margin-bottom: 20px;"></i>Save
+              </div>-->
+              <!-- <div class="row"> -->
+                  <i class="fas fa-download" style="margin-right: 10px;" v-on:click="dl2"></i>
+              <!-- </div> -->
             </div>
+
+            download
           </div>
 
           <div class="row">
@@ -73,7 +82,7 @@
                 <i v-else class="fas fa-lock-open"></i>
               </span>
             </div>
-            
+
             <div class="col-lg-9 col-md-9 col-sm-7 col-xs-9">
               <h1 v-bind:style="titleFont2" class="titleFont">{{titleFont2.fontName}}</h1>
             </div>
@@ -81,21 +90,70 @@
 
           <div class="row">
             <div class="controls col-lg-3 col-md-2" style="height:500px">
-            <!-- <a href="google.com" target="_blank">hi</a> -->
+              <!-- <a href="google.com" target="_blank">hi</a> -->
               <span v-on:click="toggleLock4" id="clickable">
                 <i v-if="f4Lock" class="fas fa-lock"></i>
                 <i v-else class="fas fa-lock-open"></i>
               </span>
             </div>
-            
+
             <div class="col-lg-9 col-md-9 col-sm-7 col-xs-9">
-              <p v-bind:style="bodyFont2" class="desc"><span style="font-weight:800">{{bodyFont2.fontName }}</span> - The Nike Epic React Flyknit foam cushioning is responsive yet light-weight, durable yet soft. This creates a sensation that not only enhances the feeling of moving forward, but makes running feel fun, too.</p>
+              <p v-bind:style="bodyFont2" class="desc">
+                <span style="font-weight:800">{{bodyFont2.fontName }}</span> - The Nike Epic React Flyknit foam cushioning is responsive yet light-weight, durable yet soft. This creates a sensation that not only enhances the feeling of moving forward, but makes running feel fun, too.
+              </p>
             </div>
           </div>
         </div>
       </div>
-      
-    </div>  
+
+      <div v-if="download1" div class="modal-mask">
+        <div class="modal-wrapper">
+          <div class="modal-container">
+            <div class="modal-header">
+              <slot name="dlTitle">
+                <a>Download title font</a>
+              </slot>
+            </div>
+
+            <div class="modal-body">
+              <slot name="dlBody">
+                <a>Download body font</a>
+              </slot>
+            </div>
+
+            <div class="modal-footer">
+              <slot name="footer">
+                <button class="modal-default-button" v-on:click="close1">OK</button>
+              </slot>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div v-if="download2" div class="modal-mask">
+        <div class="modal-wrapper">
+          <div class="modal-container">
+            <div class="modal-header">
+              <slot name="dlTitle">
+                <a>Download title font</a>
+              </slot>
+            </div>
+
+            <div class="modal-body">
+              <slot name="dlBody">
+                <a>Download body font</a>
+              </slot>
+            </div>
+
+            <div class="modal-footer">
+              <slot name="footer">
+                <button class="modal-default-button" v-on:click="close2">OK</button>
+              </slot>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
@@ -103,18 +161,17 @@
 
 <script>
 // import Saved from './Saved'
-import axios from 'axios';
-
+import axios from "axios";
 
 export default {
-  name: 'Home',
+  name: "Home",
   data: function() {
     return {
       f1Lock: 0,
       f2Lock: 0,
       f3Lock: 0,
       f4Lock: 0,
-      fonts:[],
+      fonts: [],
       titleFont1: {
         fontFamily: "'Noto Sans SC', sans-serif",
         fontName: "Noto Sans SC"
@@ -131,19 +188,20 @@ export default {
         fontFamily: "'Lato', sans-serif",
         fontName: "Lato"
       },
-    }
+      download1: 1,
+      download2: 0
+    };
   },
   created: function() {
     // gets called when the page is created
     /* eslint-disable */
-    console.log("getting fonts")
-    axios.get('http://localhost:3000/fonts')
-    .then(response => {
-      console.log(response.data[0])
-      this.fonts = response.data
-      console.log(this.fonts[0].family)
+    console.log("getting fonts");
+    axios.get("http://localhost:3000/fonts").then(response => {
+      console.log(response.data[0]);
+      this.fonts = response.data;
+      console.log(this.fonts[0].family);
       // console.log(this.fonts)
-    })
+    });
   },
   computed: {
     //getters
@@ -162,54 +220,67 @@ export default {
   },
   methods: {
     getFonts: function() {
-      console.log(this.f2Lock)
+      console.log(this.f2Lock);
       if (!this.f1Lock) {
-        var i = Math.floor(Math.random() * Math.floor(45))
-        this.titleFont1.fontFamily = this.fonts[i].pairing
-        this.titleFont1.fontName = this.fonts[i].family
+        var i = Math.floor(Math.random() * Math.floor(45));
+        this.titleFont1.fontFamily = this.fonts[i].pairing;
+        this.titleFont1.fontName = this.fonts[i].family;
       }
 
       if (!this.f3Lock) {
-        i = Math.floor(Math.random() * Math.floor(45))
-        this.titleFont2.fontFamily = this.fonts[i].pairing
-        this.titleFont2.fontName = this.fonts[i].family
+        i = Math.floor(Math.random() * Math.floor(45));
+        this.titleFont2.fontFamily = this.fonts[i].pairing;
+        this.titleFont2.fontName = this.fonts[i].family;
       }
 
       if (!this.f2Lock) {
-        i = Math.floor(Math.random() * Math.floor(45))
-        this.bodyFont1.fontFamily = this.fonts[i].pairing
-        this.bodyFont1.fontName = this.fonts[i].family
+        i = Math.floor(Math.random() * Math.floor(45));
+        this.bodyFont1.fontFamily = this.fonts[i].pairing;
+        this.bodyFont1.fontName = this.fonts[i].family;
       }
-      
+
       if (!this.f4Lock) {
-        i = Math.floor(Math.random() * Math.floor(45))
-        this.bodyFont2.fontFamily = this.fonts[i].pairing
-        this.bodyFont2.fontName = this.fonts[i].family
+        i = Math.floor(Math.random() * Math.floor(45));
+        this.bodyFont2.fontFamily = this.fonts[i].pairing;
+        this.bodyFont2.fontName = this.fonts[i].family;
       }
-      
-      return 
+
+      return;
       // return this.$store.getters.font
     },
     toggleLock1: function() {
-      this.f1Lock ^= true
+      this.f1Lock ^= true;
     },
     toggleLock2: function() {
-      this.f2Lock ^= true
+      this.f2Lock ^= true;
     },
     toggleLock3: function() {
-      this.f3Lock ^= true
+      this.f3Lock ^= true;
     },
     toggleLock4: function() {
-      this.f4Lock ^= true
+      this.f4Lock ^= true;
+    },
+    dl1: function() {
+      this.download1 = 1;
+    },
+    dl2: function() {
+      this.download2 = 1;
+    },
+    close1: function() {
+      this.download1 = 0;
+    },
+    close2: function() {
+      this.download2 = 0;
     }
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-@import url('https://fonts.googleapis.com/css?family=Anton|Arimo|Arvo|Bitter|Cabin|Crimson+Text|Dosis|Fira+Sans|Fjalla+One|Hind|Inconsolata|Indie+Flower|Josefin+Sans|Lato|Libre+Baskerville|Libre+Franklin|Lobster|Lora|Merriweather|Montserrat|Mukta|Muli|Nanum+Gothic|Noto+Sans|Noto+Sans+KR|Noto+Serif|Nunito|Open+Sans|Open+Sans+Condensed:300|Oswald|Oxygen|PT+Sans|PT+Sans+Narrow|PT+Serif|Playfair+Display|Poppins|Quicksand|Raleway:400,700|Roboto|Roboto+Condensed|Roboto+Mono|Roboto+Slab|Slabo+27px|Source+Sans+Pro|Titillium+Web|Ubuntu');
-h1, h2 {
+@import url("https://fonts.googleapis.com/css?family=Anton|Arimo|Arvo|Bitter|Cabin|Crimson+Text|Dosis|Fira+Sans|Fjalla+One|Hind|Inconsolata|Indie+Flower|Josefin+Sans|Lato|Libre+Baskerville|Libre+Franklin|Lobster|Lora|Merriweather|Montserrat|Mukta|Muli|Nanum+Gothic|Noto+Sans|Noto+Sans+KR|Noto+Serif|Nunito|Open+Sans|Open+Sans+Condensed:300|Oswald|Oxygen|PT+Sans|PT+Sans+Narrow|PT+Serif|Playfair+Display|Poppins|Quicksand|Raleway:400,700|Roboto|Roboto+Condensed|Roboto+Mono|Roboto+Slab|Slabo+27px|Source+Sans+Pro|Titillium+Web|Ubuntu");
+h1,
+h2 {
   font-weight: normal;
 }
 
@@ -234,86 +305,88 @@ html {
   min-height: 100%;
 }
 
-body{
-color: #aaa;
-transition: color 1s, background-color 1s;
+body {
+  color: #aaa;
+  transition: color 1s, background-color 1s;
 }
 
-a{
-color: #bbb;
+a {
+  color: #bbb;
 }
 
-a:hover, a:focus{
-color: #333;
-text-decoration: none;
+a:hover,
+a:focus {
+  color: #333;
+  text-decoration: none;
 }
 
 a:focus {
   font-weight: 600;
 }
 
-hr{
-border: 0;
-border-top: 2px solid #555;
+hr {
+  border: 0;
+  border-top: 2px solid #555;
 }
 
-textarea{
-border: 0;
-background: transparent;
-margin: 0;
-padding: 0;
-display: block;
-overflow: auto;
-resize: none;
-width: 100%;
-outline: none;
+textarea {
+  border: 0;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  display: block;
+  overflow: auto;
+  resize: none;
+  width: 100%;
+  outline: none;
 }
 
 #clickable {
   cursor: pointer;
 }
 
-#h1{
-box-sizing: border-box;
-padding: 1em 0 0.6em 0;
-color: #ccc;
-transition: color 1s;
+#h1 {
+  box-sizing: border-box;
+  padding: 1em 0 0.6em 0;
+  color: #ccc;
+  transition: color 1s;
 }
 
-#h1, #hidden{
-font-size: 6em;
-margin: 0;
-font-weight: 700;
-line-height: 1.1;
-font-family: 'Montserrat', helvetica, arial, sans-serif;
+#h1,
+#hidden {
+  font-size: 6em;
+  margin: 0;
+  font-weight: 700;
+  line-height: 1.1;
+  font-family: "Montserrat", helvetica, arial, sans-serif;
 }
 
-#hidden{
-white-space: nowrap;
-float: left;
-opacity: 0;
-margin-top: 2em;
+#hidden {
+  white-space: nowrap;
+  float: left;
+  opacity: 0;
+  margin-top: 2em;
 }
 
-#h2{
-font-size: 2.5em;
-box-sizing: border-box;
-margin: 0;
-padding: 0 0 1.5em 0;
-font-weight: normal;
-line-height: 1.2;
-font-style: oblique;
-font-family: 'Lora', Georgia, times, serif;
-color: #bbb;
-transition: color 1s;
+#h2 {
+  font-size: 2.5em;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0 0 1.5em 0;
+  font-weight: normal;
+  line-height: 1.2;
+  font-style: oblique;
+  font-family: "Lora", Georgia, times, serif;
+  color: #bbb;
+  transition: color 1s;
 }
 
-#content{
-font-size: 1.25em;
-font-weight: normal;
-line-height: 1.6;
-font-family: 'Hind Madurai', helvetica, arial, sans-serif;
-font-weight: 300;
+#content {
+  font-size: 1.25em;
+  font-weight: normal;
+  line-height: 1.6;
+  font-family: "Hind Madurai", helvetica, arial, sans-serif;
+  font-weight: 300;
 }
 
 .my-container {
@@ -322,407 +395,412 @@ font-weight: 300;
   margin: 20px;
 }
 
-.controls{
-background-color: #111;
-width: 13%;
-float: left;
-position: relative;
-z-index: 1;
-transition: color 1s;
+.controls {
+  background-color: #111;
+  width: 13%;
+  float: left;
+  position: relative;
+  z-index: 1;
+  transition: color 1s;
 }
 
-.controls.active{
-z-index: 2010;
+.controls.active {
+  z-index: 2010;
 }
 
-.col-md-offset-1{
-margin-left: 6%;
+.col-md-offset-1 {
+  margin-left: 6%;
 }
 
 .font-progress i {
-    -webkit-animation: glyphicon-spin-r 1s infinite linear;
-    animation: glyphicon-spin-r 1s infinite linear;
+  -webkit-animation: glyphicon-spin-r 1s infinite linear;
+  animation: glyphicon-spin-r 1s infinite linear;
 }
 
-#toolbar{
-margin-top: 5em;
+#toolbar {
+  margin-top: 5em;
 }
 
-.btn-default{
-background-color: #666;
-color: #fff;
-border: 0;
-border-radius: 2em;
-padding: 0.5em 2em;
-cursor: pointer;
+.btn-default {
+  background-color: #666;
+  color: #fff;
+  border: 0;
+  border-radius: 2em;
+  padding: 0.5em 2em;
+  cursor: pointer;
 }
 
 .btn-circle {
-display: inline-block;
-width: 2.5em;
-height: 2.4em;
-position: relative;
-margin-right: 0.5em;
-text-align: center;
-padding: 0;
-line-height: 2.5em;
-border-radius: 2.5em;
-background: #666;
-border: 0;
-cursor: pointer;
+  display: inline-block;
+  width: 2.5em;
+  height: 2.4em;
+  position: relative;
+  margin-right: 0.5em;
+  text-align: center;
+  padding: 0;
+  line-height: 2.5em;
+  border-radius: 2.5em;
+  background: #666;
+  border: 0;
+  cursor: pointer;
 }
 
-.btn-circle i{
-margin-top: 0.65em;
-}
-
-#slide{
-margin-left: 1em;
-}
-
-#toolbar .slider-track{
-height: 3px;
-background: #666;
-margin-top: -2px;
-}
-
-#toolbar .slider-handle{
-	background: #ccc;
-}
-
-.slider.slider-horizontal .slider-selection, .slider.slider-horizontal .slider-track-low, .slider.slider-horizontal .slider-track-high{
-display: none;
-}
-
-#title-controls{
-box-sizing: border-box;
-padding-bottom: 12%;
-}
-
-.btn.lock{
-background-position: 50%;
-background-size:  1.3em;
-margin-right: 0.1em;
-}
-
-.btn.edit{
-background-position: 50%;
-background-size:  1.3em;
-}
-
-.btn.lock, .btn.edit{
-float: right;
-margin-top: 0.5em;
-margin-right: 0.9em;
-}
-
-.btn.lock:hover, .btn.edit:hover{
-background-color: #666;
-}
-
-.btn.lock.active{
-}
-
-.btn.edit.active{
-}
-
-.label{
-font-size: 0.9em;
-font-weight: normal;
-display: block;
-text-align: right;
-color: #666;
-padding-right: 1.5em;
-padding-top: 0.5em;
-}
-
-.btn-circle.active{
-background-color: #777;
-}
-
-
-.footer{
-margin-top: 5em;
-}
-
-.footer hr{
-margin-bottom: 3em;
-}
-
-.footer a{
-float: left;
-margin-right: 2em;
-margin-bottom: 1em;
-}
-
-#list{
-display: block;
-position: absolute;
-top: 0;
-left: -9999999px;
-background-color: #111;
-min-height: 100vh;
-z-index: 2000;
-box-sizing: border-box;
-width: 100%;
-overflow: hidden;
-opacity: 0;
-transition: opacity 0.5s;
-padding-right: 5%;
-}
-
-#list.active{
-left: 0;
-opacity: 0.92;
-}
-
-#list h2{
-display: block;
-float: left;
-width: 100%;
-clear:  both;
-margin: 2em 0 1em 0;
-padding: 0;
-}
-
-#list .item{
-float: left;
-width: 3em;
-height: 3em;
-position: relative;
-text-align: center;
-cursor: pointer;
-}
-
-#list .item canvas{
-width: 100%;
-height: 100%;
-display: block;
-position: relative;
-z-index: 2001;
-}
-
-#list .item:hover canvas{
-width: 140%;
-height: 140%;
-margin-left: -20%;
-margin-top: -20%;
-}
-
-#list .item .font-name{
-display: inline-block;
-width: auto;
-padding: 0.3em 0.9em;
-background-color: #333;
-color: #ddd;
-white-space: nowrap;
-position: relative;
-z-index: 2002;
-margin-left: -2px;
-visibility: hidden;
-}
-
-#list .item:hover .font-name{
-visibility: visible;
-}
-
-#search{
-padding: 0.5em 1em;
-font-family: 'Hind Madurai', helvetica, arial, sans-serif;
-font-weight: 300;
-font-size: 1.2em;
-line-height: 1.5;
-width: 30em;
-margin-bottom: 1em;
-border: 2px solid #666;
-color: #999;
-background: transparent;
-}
-
-/* light color scheme */
-body.active{
-background-color: #eee;
-color: #444;
-}
-
-body.active .controls{
-background-color: #ddd;
-color: #222;
-}
-
-body.active #toolbar .slider-handle{
-background: #333;
-}
-
-body.active #h1{
-color: #111;
-}
-
-body.active #h2{
-color: #222;
-}
-
-body.active .edit, body.active .lock{
-background-color: #666;
-}
-
-body.active .edit:hover, body.active .lock:hover{
-background-color: #999;
-}
-
-body.active .controls.active{
-background-color: #222;
-}
-
-body.active #list{
-color: #eee;
-}
-
-body.active .footer a, body.active .controls .label{
-color: #222;
-}
-
-body.active .footer a:hover, body.active .controls .label:hover{
-color: #666;
-}
-
-body.active .controls.active .label{
-color: #999;
-}
-
-body.active .controls.active .label:hover{
-color: #aaa;
-}
-
-#spinner{
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background-position: 50% 50%;
-opacity: 1;
-transition: opacity 0.5s;
-z-index: 100;
-}
-
-#spinner.active{
-opacity: 0;
-}
-
-@-webkit-keyframes glyphicon-spin-r {
-    0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-
-    100% {
-        -webkit-transform: rotate(359deg);
-        transform: rotate(359deg);
-    }
-}
-
-@keyframes glyphicon-spin-r {
-    0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-
-    100% {
-        -webkit-transform: rotate(359deg);
-        transform: rotate(359deg);
-    }
-}
-
-@media only screen and (max-width: 1024px)  {
-.controls .label{
-display: none;
-}
-
-#search{
-width: 95%;
-}
-
-.controls .btn{
-margin-top: 0;
-}
-
-body.active .controls{
-background-color: #222;
-}
-
-body.active .controls.active{
-background-color: #111;
-}
-
-body.active .controls .btn{
-background-color: transparent;
-}
-}
-
-@media only screen and (max-width: 968px)  {
-#h2{
-font-size: 2em;
-}
-.tooltip-main{
-filter: alpha(opacity=90);
-opacity: .9;
+.btn-circle i {
+  margin-top: 0.65em;
 }
 
 #slide {
+  margin-left: 1em;
+}
+
+#toolbar .slider-track {
+  height: 3px;
+  background: #666;
+  margin-top: -2px;
+}
+
+#toolbar .slider-handle {
+  background: #ccc;
+}
+
+.slider.slider-horizontal .slider-selection,
+.slider.slider-horizontal .slider-track-low,
+.slider.slider-horizontal .slider-track-high {
+  display: none;
+}
+
+#title-controls {
+  box-sizing: border-box;
+  padding-bottom: 12%;
+}
+
+.btn.lock {
+  background-position: 50%;
+  background-size: 1.3em;
+  margin-right: 0.1em;
+}
+
+.btn.edit {
+  background-position: 50%;
+  background-size: 1.3em;
+}
+
+.btn.lock,
+.btn.edit {
+  float: right;
+  margin-top: 0.5em;
+  margin-right: 0.9em;
+}
+
+.btn.lock:hover,
+.btn.edit:hover {
+  background-color: #666;
+}
+
+.btn.lock.active {
+}
+
+.btn.edit.active {
+}
+
+.label {
+  font-size: 0.9em;
+  font-weight: normal;
+  display: block;
+  text-align: right;
+  color: #666;
+  padding-right: 1.5em;
+  padding-top: 0.5em;
+}
+
+.btn-circle.active {
+  background-color: #777;
+}
+
+.footer {
+  margin-top: 5em;
+}
+
+.footer hr {
+  margin-bottom: 3em;
+}
+
+.footer a {
+  float: left;
+  margin-right: 2em;
+  margin-bottom: 1em;
+}
+
+#list {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -9999999px;
+  background-color: #111;
+  min-height: 100vh;
+  z-index: 2000;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.5s;
+  padding-right: 5%;
+}
+
+#list.active {
+  left: 0;
+  opacity: 0.92;
+}
+
+#list h2 {
+  display: block;
+  float: left;
+  width: 100%;
+  clear: both;
+  margin: 2em 0 1em 0;
+  padding: 0;
+}
+
+#list .item {
+  float: left;
+  width: 3em;
+  height: 3em;
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+}
+
+#list .item canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  z-index: 2001;
+}
+
+#list .item:hover canvas {
+  width: 140%;
+  height: 140%;
+  margin-left: -20%;
+  margin-top: -20%;
+}
+
+#list .item .font-name {
+  display: inline-block;
+  width: auto;
+  padding: 0.3em 0.9em;
+  background-color: #333;
+  color: #ddd;
+  white-space: nowrap;
+  position: relative;
+  z-index: 2002;
+  margin-left: -2px;
+  visibility: hidden;
+}
+
+#list .item:hover .font-name {
+  visibility: visible;
+}
+
+#search {
+  padding: 0.5em 1em;
+  font-family: "Hind Madurai", helvetica, arial, sans-serif;
+  font-weight: 300;
+  font-size: 1.2em;
+  line-height: 1.5;
+  width: 30em;
+  margin-bottom: 1em;
+  border: 2px solid #666;
+  color: #999;
+  background: transparent;
+}
+
+/* light color scheme */
+body.active {
+  background-color: #eee;
+  color: #444;
+}
+
+body.active .controls {
+  background-color: #ddd;
+  color: #222;
+}
+
+body.active #toolbar .slider-handle {
+  background: #333;
+}
+
+body.active #h1 {
+  color: #111;
+}
+
+body.active #h2 {
+  color: #222;
+}
+
+body.active .edit,
+body.active .lock {
+  background-color: #666;
+}
+
+body.active .edit:hover,
+body.active .lock:hover {
+  background-color: #999;
+}
+
+body.active .controls.active {
+  background-color: #222;
+}
+
+body.active #list {
+  color: #eee;
+}
+
+body.active .footer a,
+body.active .controls .label {
+  color: #222;
+}
+
+body.active .footer a:hover,
+body.active .controls .label:hover {
+  color: #666;
+}
+
+body.active .controls.active .label {
+  color: #999;
+}
+
+body.active .controls.active .label:hover {
+  color: #aaa;
+}
+
+#spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: 50% 50%;
+  opacity: 1;
+  transition: opacity 0.5s;
+  z-index: 100;
+}
+
+#spinner.active {
+  opacity: 0;
+}
+
+@-webkit-keyframes glyphicon-spin-r {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes glyphicon-spin-r {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .controls .label {
+    display: none;
+  }
+
+  #search {
+    width: 95%;
+  }
+
+  .controls .btn {
+    margin-top: 0;
+  }
+
+  body.active .controls {
+    background-color: #222;
+  }
+
+  body.active .controls.active {
+    background-color: #111;
+  }
+
+  body.active .controls .btn {
+    background-color: transparent;
+  }
+}
+
+@media only screen and (max-width: 968px) {
+  #h2 {
+    font-size: 2em;
+  }
+  .tooltip-main {
+    filter: alpha(opacity=90);
+    opacity: 0.9;
+  }
+
+  #slide {
     margin-left: 3em;
-}
-}
-
-@media only screen and (max-width: 480px)  {
-#h2{
-font-size: 1.8em;
-}
+  }
 }
 
-@media only screen and (max-width: 630px)  {
-.controls .btn{
-margin-right: 0;
-}
-#slide{
-margin: 2.5em 0 0 0;
-width: 100%;
-}
+@media only screen and (max-width: 480px) {
+  #h2 {
+    font-size: 1.8em;
+  }
 }
 
-@media only screen and (max-width: 480px)  {
-.controls, body.active .controls{
-padding-right: 0;
-background: transparent;
+@media only screen and (max-width: 630px) {
+  .controls .btn {
+    margin-right: 0;
+  }
+  #slide {
+    margin: 2.5em 0 0 0;
+    width: 100%;
+  }
 }
 
-#toolbar{
-margin-top: 3em;
+@media only screen and (max-width: 480px) {
+  .controls,
+  body.active .controls {
+    padding-right: 0;
+    background: transparent;
+  }
+
+  #toolbar {
+    margin-top: 3em;
+  }
+
+  #content {
+    font-size: 1em;
+  }
+
+  #h2 {
+    font-size: 1.4em;
+  }
+
+  body.active .controls .btn {
+    filter: invert(60%);
+  }
+
+  body.active .controls.active {
+    background: transparent;
+  }
+
+  body.active .controls.active .btn {
+    filter: invert(10%);
+  }
 }
-
-#content{
-font-size: 1em;
-}
-
-#h2{
-font-size: 1.4em;
-}
-
-body.active .controls .btn{
-filter: invert(60%);
-}
-
-body.active .controls.active{
-background: transparent;
-}
-
-body.active .controls.active .btn{
-filter: invert(10%);
-}
-}
-
-
-
 
 .wrapper {
   position: relative;
@@ -731,7 +809,7 @@ filter: invert(10%);
   cursor: pointer;
 }
 .close:before {
-  content: 'X';
+  content: "X";
 }
 .close {
   position: absolute;
@@ -747,7 +825,7 @@ h1 {
 
 h2 {
   color: tan;
-  margin-top : -5px;
+  margin-top: -5px;
 }
 
 .desc {
@@ -757,5 +835,4 @@ h2 {
   line-height: 1.6em;
   text-align: justify;
 }
-
 </style>
