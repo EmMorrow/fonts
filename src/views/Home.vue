@@ -396,7 +396,7 @@ display: none;
 
 #title-controls{
 box-sizing: border-box;
-padding-bottom: 12%;
+padding-bottom: 5%;
 }
 
 .btn.lock{
