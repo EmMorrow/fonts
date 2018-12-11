@@ -1,5 +1,5 @@
 <template>
-  <div id="app" style="margin: 60px;">
+  <div id="app" style="margin: 60px; margin-top: 30px;">
     <div id="nav" class="row">
 			<div class="col-lg-6 col-md-6 col-sm-6" style="text-align:left">
         <span class="title">FontFinder</span>
@@ -22,7 +22,6 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 
 #nav {

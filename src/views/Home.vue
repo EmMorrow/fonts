@@ -19,7 +19,7 @@
         <div class="my-container">
           <div class="row">
             <div
-              class="controls col-lg-2 col-md-2"
+              class="controls col-lg-2 col-md-2 col-sm-2"
               style="padding-top:20px; padding-bottom:20px; padding-left:10px; padding-right: 10px"
             >
               <i class="fas fa-download fa-lg" v-b-modal.myModal1></i>
@@ -27,7 +27,7 @@
           </div>
 
           <div class="row">
-            <div class="controls col-lg-2 col-md-2" id="title-controls">
+            <div class="controls col-lg-2 col-md-2 col-sm-2" id="title-controls">
               <span v-on:click="toggleLock1" id="clickable">
                 <i v-if="f1Lock" class="fas fa-lock fa-lg"></i>
                 <i v-else class="fas fa-lock-open fa-lg"></i>
@@ -40,7 +40,7 @@
           </div>
 
           <div class="row">
-            <div class="controls col-lg-2 col-md-2" style="height:500px">
+            <div class="controls col-lg-2 col-md-2 col-sm-2" style="min-height:400px">
               <span v-on:click="toggleLock2" id="clickable">
                 <i v-if="f2Lock" class="fas fa-lock fa-lg"></i>
                 <i v-else class="fas fa-lock-open fa-lg"></i>
@@ -50,7 +50,11 @@
 
             <div class="col-lg-10 col-md-10 col-sm-7 col-xs-9 text-container">
               <p class="desc" v-bind:style="bodyFont1">
-                <span style="font-weight:800">{{bodyFont1.fontName}}</span> - The Nike Epic React Flyknit foam cushioning is responsive yet light-weight, durable yet soft. This creates a sensation that not only enhances the feeling of moving forward, but makes running feel fun, too.
+                <span style="font-weight:800">{{bodyFont1.fontName}}</span> - The Nike Epic React Flyknit foam cushioning is responsive yet light-weight, durable yet soft. 
+                This creates a sensation that not only enhances the feeling of moving forward, but makes running feel fun, too. Nike React feels incredibly bouncy. As your 
+                foot lands, the foam responds to the impact of your step by snapping back. The more energy you put into your step, the more energy you get in return. The foam outsole shows the hard work and wear of many miles, yet it 
+                resists compression and keeps its shape. Based on testing with champion runners like Galen Rupp, the shoe's cushioning still feels like new after roughly 300 miles. 
+                It's like you get that exciting, out-of-the-box experience with every run.
               </p>
             </div>
           </div>
@@ -61,7 +65,7 @@
         <div class="my-container">
           <div class="row">
             <div
-              class="controls col-lg-2 col-md-2"
+              class="controls col-lg-2 col-md-2 col-sm-2"
               style="padding-top:20px; padding-bottom:20px; padding-left:10px; padding-right: 10px"
             >
               <i class="fas fa-download fa-lg" v-b-modal.myModal2></i>
@@ -69,7 +73,7 @@
           </div>
 
           <div class="row">
-            <div class="controls col-lg-2 col-md-2" id="title-controls">
+            <div class="controls col-lg-2 col-md-2 col-sm-2" id="title-controls">
               <span v-on:click="toggleLock3" id="clickable">
                 <i v-if="f3Lock" class="fas fa-lock fa-lg"></i>
                 <i v-else class="fas fa-lock-open fa-lg"></i>
@@ -82,7 +86,7 @@
           </div>
 
           <div class="row">
-            <div class="controls col-lg-2 col-md-2" style="height:500px">
+            <div class="controls col-lg-2 col-md-2 col-sm-2" style="min-height:400px">
               <!-- <a href="google.com" target="_blank">hi</a> -->
               <span v-on:click="toggleLock4" id="clickable">
                 <i v-if="f4Lock" class="fas fa-lock fa-lg"></i>
@@ -92,7 +96,12 @@
 
             <div class="col-lg-10 col-md-10 col-sm-7 col-xs-9 text-container">
               <p v-bind:style="bodyFont2" class="desc">
-                <span style="font-weight:800">{{bodyFont2.fontName }}</span> - The Nike Epic React Flyknit foam cushioning is responsive yet light-weight, durable yet soft. This creates a sensation that not only enhances the feeling of moving forward, but makes running feel fun, too.
+                <span style="font-weight:800">{{bodyFont2.fontName }}</span> - The Nike Epic React Flyknit foam cushioning is responsive yet light-weight, durable yet soft. 
+                This creates a sensation that not only enhances the feeling of moving forward, but makes running feel fun, too. Nike React feels incredibly bouncy. As your 
+                foot lands, the foam responds to the impact of your step by snapping back. The more energy you put into your step, the more energy you get in return. Compared 
+                to the similarly soft Nike Lunarlon cushioning, you get 13% more energy return with React. The foam outsole shows the hard work and wear of many miles, yet it 
+                resists compression and keeps its shape. Based on testing with champion runners like Galen Rupp, the shoe's cushioning still feels like new after roughly 300 miles. 
+                It's like you get that exciting, out-of-the-box experience with every run.
               </p>
             </div>
           </div>
@@ -300,9 +309,10 @@ h2 {
 }
 
 .titleFont {
-  font-size: 30px;
+  font-size: 40px;
   font-weight: 600;
   text-align: left;
+  margin-bottom: 10px;
 }
 
 ul {
@@ -490,11 +500,6 @@ textarea {
 .slider.slider-horizontal .slider-track-low,
 .slider.slider-horizontal .slider-track-high {
   display: none;
-}
-
-#title-controls {
-  box-sizing: border-box;
-  padding-bottom: 12%;
 }
 
 .btn.lock {
