@@ -831,15 +831,16 @@ body.active .controls.active .label:hover {
   margin-left: 90%;
   cursor: pointer;
 }
-.close:before {
-  content: "X";
-}
+
 .close {
-  position: absolute;
-  top: 0;
-  right: 0;
+  top: 10;
   cursor: pointer;
 }
+
+.modal-footer {
+  display: none !important;
+}
+
 h1 {
   font-size: 1.2em;
   color: dark;
