@@ -61,7 +61,7 @@
         </div>
       </div>
 
-      <div class="col-lg-6 col-md-6 col-sm-12">
+      <!-- <div class="col-lg-6 col-md-6 col-sm-12">
         <div class="my-container">
           <div class="row">
             <div
@@ -87,7 +87,6 @@
 
           <div class="row">
             <div class="controls col-lg-2 col-md-2 col-sm-2" style="min-height:400px">
-              <!-- <a href="google.com" target="_blank">hi</a> -->
               <span v-on:click="toggleLock4" id="clickable">
                 <i v-if="f4Lock" class="fas fa-lock fa-lg"></i>
                 <i v-else class="fas fa-lock-open fa-lg"></i>
@@ -106,7 +105,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
     <div>
       <b-modal id="myModal1" title="Download" style="text-align: left">
@@ -138,7 +137,7 @@
           target="_blank"
         >Go to font page</a>
       </b-modal>
-      <b-modal id="myModal2" title="Download" style="text-align: left">
+      <!-- <b-modal id="myModal2" title="Download" style="text-align: left">
         <h6>Embed</h6>
         <p>
           Copy and paste the following into the
@@ -166,7 +165,7 @@
           v-bind:href="'https://fonts.google.com/specimen/' + bodyFont2.fontName"
           target="_blank"
         >Go to font page</a>
-      </b-modal>
+      </b-modal> -->
     </div>
   </div>
 </template>
