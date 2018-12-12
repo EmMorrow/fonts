@@ -2,35 +2,30 @@
 <template>
   <div>
     <div class="row" style="margin-top: 20px; margin-bottom: 20px;">
-      <div class="col-lg-5 col-md-5 col-sm-12"></div>
-      <div class="col-lg-2 col-md-2 col-sm-12">
+      <div class="col-lg-2 col-md-2 col-sm-10">
         <button
           v-on:click="getFonts"
           type="button"
           class="btn btn-warning btn-block"
           style="color: #fff; font-weight: bold"
-        >Refresh</button>
+        >Random</button>
       </div>
-      <div class="col-lg-5 col-md-5 col-sm-12"></div>
+      <div class="col-lg-1 col-md-1 col-sm-2" id="clickable" style="color: #ffc107; font-weight: bold">
+        <i class="fas fa-download fa-lg" v-b-modal.myModal1></i>
+        <p style="font-size:13px; padding-left: 5px">Embed</p>
+      </div>
     </div>
 
-    <div class="row">
-      <div class="col-lg-6 col-md-6 col-sm-12">
+    <div class="row" style="background-color: #efefef">
+      <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="my-container">
           <div class="row">
-            <div
-              class="controls col-lg-2 col-md-2 col-sm-2"
-              style="padding-top:20px; padding-bottom:20px; padding-left:10px; padding-right: 10px"
-            >
-              <i class="fas fa-download fa-lg" v-b-modal.myModal1></i>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="controls col-lg-2 col-md-2 col-sm-2" id="title-controls">
+            <div class="controls col-lg-1 col-md-1 col-sm-1" id="title-controls">
               <span v-on:click="toggleLock1" id="clickable">
                 <i v-if="f1Lock" class="fas fa-lock fa-lg"></i>
                 <i v-else class="fas fa-lock-open fa-lg"></i>
+                <br>
+                <p style="font-size:13px; padding-top: 5px">Title</p>
               </span>
             </div>
 
@@ -40,16 +35,17 @@
           </div>
 
           <div class="row">
-            <div class="controls col-lg-2 col-md-2 col-sm-2" style="min-height:400px">
+            <div class="controls col-lg-1 col-md-1 col-sm-1" style="min-height:400px">
               <span v-on:click="toggleLock2" id="clickable">
                 <i v-if="f2Lock" class="fas fa-lock fa-lg"></i>
                 <i v-else class="fas fa-lock-open fa-lg"></i>
+                <br>
+                <p style="font-size:13px; padding-top: 5px">Body</p>
               </span>
-              <!-- <a href="google.com" target="_blank">hi</a> -->
             </div>
 
-            <div class="col-lg-10 col-md-10 col-sm-7 col-xs-9 text-container">
-              <textarea v-bind:style="bodyFont1" class="desc"> {{bodyFont1.fontName }} - The Nike Epic React Flyknit foam cushioning is responsive yet light-weight, durable yet soft. This creates a sensation that not only enhances the feeling of moving forward, but makes running feel fun, too. Nike React feels incredibly bouncy. As your foot lands, the foam responds to the impact of your step by snapping back. The more energy you put into your step, the more energy you get in return. Compared to the similarly soft Nike Lunarlon cushioning, you get 13% more energy return with React. The foam outsole shows the hard work and wear of many miles, yet it resists compression and keeps its shape. Based on testing with champion runners like Galen Rupp, the shoe's cushioning still feels like new after roughly 300 miles. It's like you get that exciting, out-of-the-box experience with every run.
+            <div class="col-lg-6 col-md-6 col-sm-7 col-xs-9 text-container">
+              <textarea v-bind:style="bodyFont1" class="desc">{{bodyFont1.fontName }} - The Nike Epic React Flyknit foam cushioning is responsive yet light-weight, durable yet soft. This creates a sensation that not only enhances the feeling of moving forward, but makes running feel fun, too. Nike React feels incredibly bouncy. As your foot lands, the foam responds to the impact of your step by snapping back. The more energy you put into your step, the more energy you get in return. Compared to the similarly soft Nike Lunarlon cushioning, you get 13% more energy return with React. The foam outsole shows the hard work and wear of many miles, yet it resists compression and keeps its shape. Based on testing with champion runners like Galen Rupp, the shoe's cushioning still feels like new after roughly 300 miles. It's like you get that exciting, out-of-the-box experience with every run.
               </textarea>
             </div>
           </div>
@@ -94,21 +90,27 @@
             </div>
           </div>
         </div>
-      </div> -->
+      </div>-->
     </div>
     <div>
-      <b-modal id="myModal1" title="Download" style="text-align: left">
+      <b-modal id="myModal1" title="Embed" style="text-align: left">
         <h6>Embed</h6>
         <p>
           Copy and paste the following into the
           <code>
-            <span class="tag">&lt;<span class="name">head</span>&gt;
+            <span class="tag">
+              &lt;
+              <span class="name">head</span>&gt;
             </span>
           </code>
-           of your HTML document:
+          of your HTML document:
         </p>
         <code v-bind="font1 = titleFont1.fontName, font2 = bodyFont1.fontName">
-          <span class="tag">&lt;<span class="name">link href="https://fonts.googleapis.com/css?family={{font1}}|{{font2}}" rel="stylesheet"</span>&gt;
+          <span class="tag">
+            &lt;
+            <span
+              class="name"
+            >link href="https://fonts.googleapis.com/css?family={{font1}}|{{font2}}" rel="stylesheet"</span>&gt;
           </span>
         </code>
         <br>
@@ -154,7 +156,7 @@
           v-bind:href="'https://fonts.google.com/specimen/' + bodyFont2.fontName"
           target="_blank"
         >Go to font page</a>
-      </b-modal> -->
+      </b-modal>-->
     </div>
   </div>
 </template>
@@ -297,7 +299,7 @@ h2 {
 }
 
 .titleFont {
-  font-size: 40px;
+  font-size: 50px;
   font-weight: 600;
   text-align: left;
   margin-bottom: -60px;
@@ -352,7 +354,7 @@ textarea {
   resize: none;
   width: 100%;
   outline: none;
-  color: #ccc;
+  color: #333;
 }
 
 #clickable {
@@ -417,8 +419,8 @@ textarea {
 }
 
 .my-container {
-  background-color: #222;
-  color: #ccc;
+  color: #676767;
+  /* color: #ccc; */
   padding-right: 20px;
   margin: 10px;
 }
@@ -427,7 +429,6 @@ textarea {
 }
 
 .controls {
-  background-color: #111;
   width: 13%;
   float: left;
   position: relative;
@@ -495,7 +496,8 @@ textarea {
 }
 #title-controls {
   box-sizing: border-box;
-  padding-bottom: 5%;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
 
 .slider.slider-horizontal .slider-selection,
@@ -862,12 +864,12 @@ h2 {
 .desc {
   text-transform: none;
   letter-spacing: 0;
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.6em;
-  text-align: justify;
+  text-align: left;
   height: 100%;
 
-/*  font-size: 1.25em;
+  /*  font-size: 1.25em;
   font-weight: normal;
   line-height: 1.6;
   font-family: 'Hind Madurai', helvetica, arial, sans-serif;
