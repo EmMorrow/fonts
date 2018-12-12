@@ -35,7 +35,7 @@
             </div>
 
             <div class="col-lg-10 col-md-10 col-sm-7 col-xs-9 text-container">
-              <h1 v-bind:style="titleFont1" class="titleFont">{{titleFont1.fontName}}</h1>
+              <textarea v-bind:style="titleFont2" class="titleFont">{{titleFont2.fontName}}</textarea>
             </div>
           </div>
 
@@ -49,13 +49,8 @@
             </div>
 
             <div class="col-lg-10 col-md-10 col-sm-7 col-xs-9 text-container">
-              <p class="desc" v-bind:style="bodyFont1">
-                <span style="font-weight:800">{{bodyFont1.fontName}}</span> - The Nike Epic React Flyknit foam cushioning is responsive yet light-weight, durable yet soft. 
-                This creates a sensation that not only enhances the feeling of moving forward, but makes running feel fun, too. Nike React feels incredibly bouncy. As your 
-                foot lands, the foam responds to the impact of your step by snapping back. The more energy you put into your step, the more energy you get in return. The foam outsole shows the hard work and wear of many miles, yet it 
-                resists compression and keeps its shape. Based on testing with champion runners like Galen Rupp, the shoe's cushioning still feels like new after roughly 300 miles. 
-                It's like you get that exciting, out-of-the-box experience with every run.
-              </p>
+              <textarea v-bind:style="bodyFont1" class="desc"> {{bodyFont1.fontName }} - The Nike Epic React Flyknit foam cushioning is responsive yet light-weight, durable yet soft. This creates a sensation that not only enhances the feeling of moving forward, but makes running feel fun, too. Nike React feels incredibly bouncy. As your foot lands, the foam responds to the impact of your step by snapping back. The more energy you put into your step, the more energy you get in return. Compared to the similarly soft Nike Lunarlon cushioning, you get 13% more energy return with React. The foam outsole shows the hard work and wear of many miles, yet it resists compression and keeps its shape. Based on testing with champion runners like Galen Rupp, the shoe's cushioning still feels like new after roughly 300 miles. It's like you get that exciting, out-of-the-box experience with every run.
+              </textarea>
             </div>
           </div>
         </div>
@@ -81,7 +76,7 @@
             </div>
 
             <div class="col-lg-10 col-md-10 col-sm-7 col-xs-9 text-container">
-              <h1 v-bind:style="titleFont2" class="titleFont">{{titleFont2.fontName}}</h1>
+              <textarea v-bind:style="titleFont2" class="titleFont">{{titleFont2.fontName}}</textarea>
             </div>
           </div>
 
@@ -94,14 +89,8 @@
             </div>
 
             <div class="col-lg-10 col-md-10 col-sm-7 col-xs-9 text-container">
-              <p v-bind:style="bodyFont2" class="desc">
-                <span style="font-weight:800">{{bodyFont2.fontName }}</span> - The Nike Epic React Flyknit foam cushioning is responsive yet light-weight, durable yet soft. 
-                This creates a sensation that not only enhances the feeling of moving forward, but makes running feel fun, too. Nike React feels incredibly bouncy. As your 
-                foot lands, the foam responds to the impact of your step by snapping back. The more energy you put into your step, the more energy you get in return. Compared 
-                to the similarly soft Nike Lunarlon cushioning, you get 13% more energy return with React. The foam outsole shows the hard work and wear of many miles, yet it 
-                resists compression and keeps its shape. Based on testing with champion runners like Galen Rupp, the shoe's cushioning still feels like new after roughly 300 miles. 
-                It's like you get that exciting, out-of-the-box experience with every run.
-              </p>
+              <textarea v-bind:style="bodyFont2" class="desc"> {{bodyFont2.fontName }} - The Nike Epic React Flyknit foam cushioning is responsive yet light-weight, durable yet soft. This creates a sensation that not only enhances the feeling of moving forward, but makes running feel fun, too. Nike React feels incredibly bouncy. As your foot lands, the foam responds to the impact of your step by snapping back. The more energy you put into your step, the more energy you get in return. Compared to the similarly soft Nike Lunarlon cushioning, you get 13% more energy return with React. The foam outsole shows the hard work and wear of many miles, yet it resists compression and keeps its shape. Based on testing with champion runners like Galen Rupp, the shoe's cushioning still feels like new after roughly 300 miles. It's like you get that exciting, out-of-the-box experience with every run.
+              </textarea>
             </div>
           </div>
         </div>
@@ -311,7 +300,7 @@ h2 {
   font-size: 40px;
   font-weight: 600;
   text-align: left;
-  margin-bottom: 10px;
+  margin-bottom: -60px;
 }
 
 ul {
@@ -359,10 +348,11 @@ textarea {
   margin: 0;
   padding: 0;
   display: block;
-  overflow: auto;
+  overflow: hidden !important;
   resize: none;
   width: 100%;
   outline: none;
+  color: #ccc;
 }
 
 #clickable {
@@ -404,6 +394,19 @@ textarea {
   color: #bbb;
   transition: color 1s;
 }
+/*
+textarea {
+  border: 0;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  display: block;
+  resize: none;
+  width: 100%;
+  outline: none;
+  resize: none !important;
+  overflow: hidden;
+}*/
 
 #content {
   font-size: 1.25em;
@@ -862,5 +865,12 @@ h2 {
   font-size: 15px;
   line-height: 1.6em;
   text-align: justify;
+  height: 100%;
+
+/*  font-size: 1.25em;
+  font-weight: normal;
+  line-height: 1.6;
+  font-family: 'Hind Madurai', helvetica, arial, sans-serif;
+  font-weight: 300;*/
 }
 </style>
