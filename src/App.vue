@@ -3,7 +3,7 @@
     <div id="nav" class="row">
 			<div class="col-lg-6 col-md-6 col-sm-6" style="text-align:left">
         <span class="title">FontFinder</span>
-        <br>Your one-stop shop to find the perfect font pairing!
+        <!-- <br>Your one-stop shop to find the perfect font pairing! -->
       </div>
 			<div class="col-lg-6 col-md-6 col-sm-6" >
 			</div>

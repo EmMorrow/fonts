@@ -10,7 +10,11 @@
           style="color: #fff; font-weight: bold"
         >Random</button>
       </div>
-      <div class="col-lg-1 col-md-1 col-sm-2" id="clickable" style="color: #ffc107; font-weight: bold">
+      <div
+        class="col-lg-1 col-md-1 col-sm-2"
+        id="clickable"
+        style="color: #ffc107; font-weight: bold"
+      >
         <i class="fas fa-download fa-lg" v-b-modal.myModal1></i>
         <p style="font-size:13px; padding-left: 5px">Embed</p>
       </div>
@@ -20,32 +24,36 @@
       <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="my-container">
           <div class="row">
-            <div class="controls col-lg-1 col-md-1 col-sm-1" id="title-controls">
+            <div class="controls col-lg-2 col-md-2 col-sm-2" id="title-controls">
               <span v-on:click="toggleLock1" id="clickable">
                 <i v-if="f1Lock" class="fas fa-lock fa-lg"></i>
                 <i v-else class="fas fa-lock-open fa-lg"></i>
                 <br>
-                <p style="font-size:13px; padding-top: 5px">Title</p>
+                <p style="font-size:13px; padding-top: 5px">{{titleFont1.fontName}}</p>
               </span>
             </div>
 
             <div class="col-lg-10 col-md-10 col-sm-7 col-xs-9 text-container">
-              <textarea v-bind:style="titleFont2" class="titleFont">{{titleFont2.fontName}}</textarea>
+              <textarea v-bind:style="titleFont1" class="titleFont">Explore font pairings</textarea>
             </div>
           </div>
 
           <div class="row">
-            <div class="controls col-lg-1 col-md-1 col-sm-1" style="min-height:400px">
+            <div class="controls col-lg-2 col-md-2 col-sm-2" style="min-height:400px">
               <span v-on:click="toggleLock2" id="clickable">
                 <i v-if="f2Lock" class="fas fa-lock fa-lg"></i>
                 <i v-else class="fas fa-lock-open fa-lg"></i>
                 <br>
-                <p style="font-size:13px; padding-top: 5px">Body</p>
+                <p style="font-size:13px; padding-top: 5px">{{bodyFont1.fontName }}</p>
               </span>
             </div>
 
             <div class="col-lg-6 col-md-6 col-sm-7 col-xs-9 text-container">
-              <textarea v-bind:style="bodyFont1" class="desc">{{bodyFont1.fontName }} - The Nike Epic React Flyknit foam cushioning is responsive yet light-weight, durable yet soft. This creates a sensation that not only enhances the feeling of moving forward, but makes running feel fun, too. Nike React feels incredibly bouncy. As your foot lands, the foam responds to the impact of your step by snapping back. The more energy you put into your step, the more energy you get in return. Compared to the similarly soft Nike Lunarlon cushioning, you get 13% more energy return with React. The foam outsole shows the hard work and wear of many miles, yet it resists compression and keeps its shape. Based on testing with champion runners like Galen Rupp, the shoe's cushioning still feels like new after roughly 300 miles. It's like you get that exciting, out-of-the-box experience with every run.
+              <textarea v-bind:style="bodyFont1" class="desc">We’re here to help you find the perfect font pairing. Our tool can help whether you don’t know where to start or you just want to test out some ideas. Use the menu above to generate new fonts, and use the Lock buttons on the sidebar to keep fonts you like. You can change the text to say whatever you’d like.
+                
+When you find a combination you like, use the Embed button to incorporate it into your project.
+                
+Font pairing is all about balancing contrast with an overall theme. Keep that in mind as you explore different combinations!
               </textarea>
             </div>
           </div>
@@ -421,7 +429,7 @@ textarea {
 .my-container {
   color: #676767;
   /* color: #ccc; */
-  padding-right: 20px;
+  padding-right: 10px;
   margin: 10px;
 }
 
@@ -429,7 +437,6 @@ textarea {
 }
 
 .controls {
-  width: 13%;
   float: left;
   position: relative;
   z-index: 1;
@@ -497,7 +504,7 @@ textarea {
 #title-controls {
   box-sizing: border-box;
   padding-bottom: 10px;
-  padding-top: 10px;
+  padding-top: 20px;
 }
 
 .slider.slider-horizontal .slider-selection,
@@ -868,6 +875,7 @@ h2 {
   line-height: 1.6em;
   text-align: left;
   height: 100%;
+  text-indent: 0;
 
   /*  font-size: 1.25em;
   font-weight: normal;
