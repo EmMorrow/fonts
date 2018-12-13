@@ -2,14 +2,6 @@
 <template>
   <div>
     <div class="row" style="margin-top: 20px; margin-bottom: 20px;">
-      <div class="col-lg-2 col-md-2 col-sm-10">
-        <button
-          v-on:click="getFonts"
-          type="button"
-          class="btn btn-warning btn-block"
-          style="color: #fff; font-weight: bold"
-        >Random</button>
-      </div>
       <div
         class="col-lg-1 col-md-1 col-sm-2"
         id="clickable"
@@ -19,7 +11,16 @@
         <p style="font-size:13px; padding-left: 5px">Embed</p>
       </div>
 
-<!--       <ul class="dropdown-menu scrollable-menu" role="menu">
+      <div class="col-lg-2 col-md-2 col-sm-10">
+        <button
+          v-on:click="getFonts"
+          type="button"
+          class="btn btn-warning btn-block"
+          style="color: #fff; font-weight: bold"
+        >Random</button>
+      </div>
+            <div class="col-lg-1 col-md-1 col-sm-12" style="padding-top:10px; font-weight: bold">OR</div>
+      <!--       <ul class="dropdown-menu scrollable-menu" role="menu">
         <li><a href="#">Action</a></li>
         <li><a href="#">Another action</a></li>
         <li><a href="#">Something else here</a></li>
@@ -34,24 +35,28 @@
         <li><a href="#">Something else here</a></li>
         <li><a href="#">Action</a></li>
         <li><a href="#">Another action</a></li>
-      </ul> -->
-
-      <div style='width:150px;height:40px;'>
-        <b-dropdown boundary='scrollParent' id="ddown1" text="Header Font">
+      </ul>-->
+      <div style="width:150px;height:40px;">
+        <b-dropdown boundary="scrollParent" id="ddown1" text="Header Font">
           <div v-for="font in fonts.slice(0, 45)">
-            <b-dropdown-item v-on:click="titleFont1.fontFamily = font.pairing; titleFont1.fontName = font.family" style="font-family: font.pairing">{{font.family}}</b-dropdown-item>
+            <b-dropdown-item
+              v-on:click="titleFont1.fontFamily = font.pairing; titleFont1.fontName = font.family"
+              style="font-family: font.pairing"
+            >{{font.family}}</b-dropdown-item>
           </div>
         </b-dropdown>
       </div>
 
-      <div style='width:150px;height:40px'>
-        <b-dropdown boundary='scrollParent' id="ddown1" text="Body Font">
+      <div style="width:150px;height:40px">
+        <b-dropdown boundary="scrollParent" id="ddown1" text="Body Font">
           <div v-for="font in fonts.slice(0, 45)">
-            <b-dropdown-item v-on:click="bodyFont1.fontFamily = font.pairing; bodyFont1.fontName = font.family" style="font-family: font.pairing">{{font.family}}</b-dropdown-item>
+            <b-dropdown-item
+              v-on:click="bodyFont1.fontFamily = font.pairing; bodyFont1.fontName = font.family"
+              style="font-family: font.pairing"
+            >{{font.family}}</b-dropdown-item>
           </div>
         </b-dropdown>
       </div>
-
     </div>
 
     <div class="row" style="background-color: #efefef">
@@ -206,7 +211,6 @@ Font pairing is all about balancing contrast with an overall theme. Keep that in
 
 
 <script>
-
 // import Saved from './Saved'
 import axios from "axios";
 const fetch = require("node-fetch");
@@ -336,7 +340,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-
 @import url("https://fonts.googleapis.com/css?family=Anton|Arimo|Arvo|Bitter|Cabin|Crimson+Text|Dosis|Fira+Sans|Fjalla+One|Hind|Inconsolata|Indie+Flower|Josefin+Sans|Lato|Libre+Baskerville|Libre+Franklin|Lobster|Lora|Merriweather|Montserrat|Mukta|Muli|Nanum+Gothic|Noto+Sans|Noto+Sans+KR|Noto+Serif|Nunito|Open+Sans|Open+Sans+Condensed:300|Oswald|Oxygen|PT+Sans|PT+Sans+Narrow|PT+Serif|Playfair+Display|Poppins|Quicksand|Raleway:400,700|Roboto|Roboto+Condensed|Roboto+Mono|Roboto+Slab|Slabo+27px|Source+Sans+Pro|Titillium+Web|Ubuntu");
 h1,
 h2 {
@@ -403,9 +406,9 @@ textarea {
 }
 
 .scrollable-menu {
-    height: auto;
-    max-height: 200px;
-    overflow-x: hidden;
+  height: auto;
+  max-height: 200px;
+  overflow-x: hidden;
 }
 
 #clickable {
@@ -926,9 +929,6 @@ h2 {
   font-family: 'Hind Madurai', helvetica, arial, sans-serif;
   font-weight: 300;*/
 }
-
-
-
 </style>
 
 
