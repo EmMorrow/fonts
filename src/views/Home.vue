@@ -18,6 +18,40 @@
         <i class="fas fa-download fa-lg" v-b-modal.myModal1></i>
         <p style="font-size:13px; padding-left: 5px">Embed</p>
       </div>
+
+<!--       <ul class="dropdown-menu scrollable-menu" role="menu">
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Something else here</a></li>
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Something else here</a></li>
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Something else here</a></li>
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Something else here</a></li>
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+      </ul> -->
+
+      <div style='width:150px;height:40px;'>
+        <b-dropdown boundary='scrollParent' id="ddown1" text="Header Font">
+          <div v-for="font in fonts.slice(0, 45)">
+            <b-dropdown-item v-on:click="titleFont1.fontFamily = font.pairing; titleFont1.fontName = font.family" style="font-family: font.pairing">{{font.family}}</b-dropdown-item>
+          </div>
+        </b-dropdown>
+      </div>
+
+      <div style='width:150px;height:40px'>
+        <b-dropdown boundary='scrollParent' id="ddown1" text="Body Font">
+          <div v-for="font in fonts.slice(0, 45)">
+            <b-dropdown-item v-on:click="bodyFont1.fontFamily = font.pairing; bodyFont1.fontName = font.family" style="font-family: font.pairing">{{font.family}}</b-dropdown-item>
+          </div>
+        </b-dropdown>
+      </div>
+
     </div>
 
     <div class="row" style="background-color: #efefef">
@@ -172,6 +206,7 @@ Font pairing is all about balancing contrast with an overall theme. Keep that in
 
 
 <script>
+
 // import Saved from './Saved'
 import axios from "axios";
 const fetch = require("node-fetch");
@@ -234,6 +269,7 @@ export default {
             newFonts.push(newFont);
           }
         });
+      // var f = newFonts.slice(0,46);
       this.fonts = newFonts;
     }
   },
@@ -300,6 +336,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
+
 @import url("https://fonts.googleapis.com/css?family=Anton|Arimo|Arvo|Bitter|Cabin|Crimson+Text|Dosis|Fira+Sans|Fjalla+One|Hind|Inconsolata|Indie+Flower|Josefin+Sans|Lato|Libre+Baskerville|Libre+Franklin|Lobster|Lora|Merriweather|Montserrat|Mukta|Muli|Nanum+Gothic|Noto+Sans|Noto+Sans+KR|Noto+Serif|Nunito|Open+Sans|Open+Sans+Condensed:300|Oswald|Oxygen|PT+Sans|PT+Sans+Narrow|PT+Serif|Playfair+Display|Poppins|Quicksand|Raleway:400,700|Roboto|Roboto+Condensed|Roboto+Mono|Roboto+Slab|Slabo+27px|Source+Sans+Pro|Titillium+Web|Ubuntu");
 h1,
 h2 {
@@ -363,6 +400,12 @@ textarea {
   width: 100%;
   outline: none;
   color: #333;
+}
+
+.scrollable-menu {
+    height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
 }
 
 #clickable {
@@ -883,4 +926,9 @@ h2 {
   font-family: 'Hind Madurai', helvetica, arial, sans-serif;
   font-weight: 300;*/
 }
+
+
+
 </style>
+
+
